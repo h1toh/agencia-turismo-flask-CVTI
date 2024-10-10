@@ -1,0 +1,7 @@
+comandos importante:
+
+py -3 -m venv .venv
+pip install flask
+pip install python-dotenv
+.venv\Scripts\activate
+flask run --debug

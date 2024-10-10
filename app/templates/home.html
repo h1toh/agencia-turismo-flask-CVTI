@@ -1,0 +1,37 @@
+
+
+{% extends 'base.html' %}
+
+{% block base %}
+<div id="welc" style="background-color: green; 
+height: 40px; 
+color: white; 
+display: flex;
+align-items: center;
+padding: 0 20px;
+font-size: 14px;
+gap: 10px;
+justify-content: center;">
+    <p>Bem-vindo(a) ao turismos.com</p>
+    <a id="close" style="
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    color: white;
+    height: 10px;
+    font-size: 18px;
+    display: flex;
+    margin-top: -11px;
+    width: 10px;">x</a>
+</div>
+<main>
+    <h1>Home</h1>
+    <p>Bem-vindo</p>
+</main>
+<script>
+    let divWelc = document.getElementById("welc")
+    let closeWelc = document.getElementById("close")
+    closeWelc.addEventListener("click",()=>{
+        divWelc.remove()
+    })
+</script>
+{% endblock %}
