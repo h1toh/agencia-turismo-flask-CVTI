@@ -50,3 +50,8 @@ nav{
     justify-content: right;
     align-items: center;
 }
+.pfp{
+    height: 30px;
+    border-radius: 50%;
+    margin-top: 5px;
+}

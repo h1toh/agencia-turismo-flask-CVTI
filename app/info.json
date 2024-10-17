@@ -1,0 +1,27 @@
+[
+    {
+        "pais": "Brasil",
+        "estado": "Rio de Janeiro",
+        "local": "Copacabana",
+        "hoteis": [
+            {
+                "nome": "Majestic Rio Palace Hotel",
+                "preco": "335,00",
+                "estrelas": 3
+            },
+            {
+                "nome": "Astoria Copacabana",
+                "preco": "445,00",
+                "estrelas": 4
+            },
+            {
+                "nome": "Hilton RJ Copacabana",
+                "preco": "1.240,00",
+                "estrelas": 5
+            }
+        ],
+        "moeda":"R$",
+        "pessoas": 2,
+        "tempo": "Por noite"
+    }
+]

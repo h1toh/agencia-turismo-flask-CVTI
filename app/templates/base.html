@@ -19,7 +19,7 @@
             <a href="/viagens">Viagens</a> 
             <a href="/favoritos">Favoritos</a>
             {% if session['user'] %}
-                <a href="/profile">Meu Perfil</a>
+                <a href="/profile"><img class="pfp" title="Meu Perfil" src="{{url_for('static',filename='images/defpfp.jpg')}}" alt=""></a>
             {% else %}
                 <a href="/conectar">Conectar</a>
             {% endif %}

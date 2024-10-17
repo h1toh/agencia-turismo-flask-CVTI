@@ -1,6 +1,6 @@
 from app import app
 from flask import redirect, request, render_template, flash, session
-import json, os
+import json, os, app.ofer as of
 
 app.secret_key = 'CVTI'
 
@@ -10,7 +10,17 @@ def redirectHome():
 
 @app.route("/home")
 def home():
-    return render_template('home.html')
+    hotel1 = of.ofertas[0]['hoteis'][0]['nome']
+    hotel2 = of.ofertas[0]['hoteis'][1]['nome']
+    hotel3 = of.ofertas[0]['hoteis'][2]['nome']
+    local = of.ofertas[0]['local']
+    estado = of.ofertas[0]['estado']
+    preco1 = of.ofertas[0]['hoteis'][0]['preco']
+    preco2 = of.ofertas[0]['hoteis'][1]['preco']
+    preco3 = of.ofertas[0]['hoteis'][2]['preco']
+    tempo = of.ofertas[0]['tempo']
+    moeda = of.ofertas[0]['moeda']
+    return render_template('home.html', hotel1=hotel1,hotel2=hotel2,hotel3=hotel3, local=local, estado=estado, preco1=preco1,preco2=preco2,preco3=preco3, tempo=tempo, moeda=moeda)
 
 @app.route("/viagens")
 def viagens():

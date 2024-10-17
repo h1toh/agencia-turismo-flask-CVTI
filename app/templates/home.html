@@ -1,37 +1,82 @@
-
-
 {% extends 'base.html' %}
 
 {% block base %}
-<div id="welc" style="background-color: rgb(32, 32, 247); 
-height: 40px; 
-color: white; 
-display: flex;
-align-items: center;
-padding: 0 20px;
-font-size: 14px;
-gap: 10px;
-justify-content: center;">
-    <p>Bem-vindo(a) ao aterrissar.com</p>
-    <a id="close" style="
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    cursor: pointer;
-    color: white;
-    height: 10px;
-    font-size: 18px;
-    display: flex;
-    margin-top: -11px;
-    width: 10px;">x</a>
-</div>
-<main>
-    <h1>Home</h1>
-    <p>Bem-vindo</p>
-</main>
-<script>
-    let divWelc = document.getElementById("welc")
-    let closeWelc = document.getElementById("close")
-    closeWelc.addEventListener("click",()=>{
-        divWelc.remove()
-    })
-</script>
+
+<head>
+    <style>
+        #ofertas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            padding: 50px 0;
+        }
+
+        .majestic {
+            height: 170px;
+            border-radius: 6px;
+        }
+
+        .card {
+            -webkit-box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
+            -moz-box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
+            box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
+            border-radius: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 300px;
+            width: 270px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="ofertas">
+        <h1>Ofertas imperdiveis!</h1>
+        <main style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: white;
+        gap: 20px;">
+
+            <div class="card">
+                <div>
+                    <img class="majestic" src="{{url_for('static',filename='images/majestic.jpg')}}" alt="majestic">
+                    <h1 style="font-size: 20px;">{{ hotel1 }}</h1>
+                    <p style="font-size: 13px; color: gray;">{{ local }}, {{ estado }}</p>
+                </div>
+                <div style="display: flex;
+                    align-items: center;
+                    margin-left: 100px;">
+                    <p style="color: gray;
+                    font-size: 13px;">{{ tempo }}</p>
+                    <h1 style="font-size: 20px; color: rgb(223, 77, 24);">{{ moeda }} {{ preco1 }}</h1>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <img class="majestic" src="{{url_for('static',filename='images/astoria.jpg')}}" alt="majestic">
+                    <h1 style="font-size: 20px;">{{ hotel2 }}</h1>
+                    <p style="font-size: 13px; color: gray;">{{ local }}, {{ estado }}</p>
+                </div>
+                <div style="display: flex;
+                    align-items: center;
+                    margin-left: 100px;">
+                    <p style="color: gray;
+                    font-size: 13px;">{{ tempo }}</p>
+                    <h1 style="font-size: 20px; color: rgb(223, 77, 24);">{{ moeda }} {{ preco2 }}</h1>
+                </div>
+            </div>
+
+        </main>
+
+    </main>
+</body>
 {% endblock %}
