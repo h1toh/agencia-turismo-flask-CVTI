@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turismos</title>
+    <title>Aterrissar</title>
     <link rel="shortcut icon"
         href="https://media.licdn.com/dms/image/v2/C4E0BAQFiqxB0tsTy1g/company-logo_200_200/company-logo_200_200/0/1662660090313?e=2147483647&v=beta&t=gFK_cLcLullIqcvVf2jSEPV68Mx2P5ZwxkVd_kFWhIM"
         type="image/x-icon">
@@ -14,11 +14,15 @@
 <body>
     
     <header class="cabecalho">
-        <a href="/"><img class="logo" src="{{ url_for('static', filename='imgs/logo.png') }}"></a>
+        <a href="/">Aterrissar</a>
         <nav class="links">
             <a href="/viagens">Viagens</a> 
-            <a href="/favoritos">Favoritos</a> 
-            <a href="/login">Fazer Login</a>
+            <a href="/favoritos">Favoritos</a>
+            {% if session['user'] %}
+                <a href="/profile">Meu Perfil</a>
+            {% else %}
+                <a href="/conectar">Conectar</a>
+            {% endif %}
         </nav>
     </header>
     <div class="risco"></div>
