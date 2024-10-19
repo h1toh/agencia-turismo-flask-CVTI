@@ -23,5 +23,55 @@
         "moeda":"R$",
         "pessoas": 2,
         "tempo": "Por noite"
+    },
+    {
+        "pais": "Brasil",
+        "estado": "Rio de Janeiro",
+        "local": "Paraty",
+        "hoteis": [
+            {
+                "nome": "Casas do Pátio Pousada & Bar",
+                "preco": "770,00",
+                "estrelas": 3
+            },
+            {
+                "nome": "Ferraria Guest House",
+                "preco": "770,00",
+                "estrelas": 4
+            },
+            {
+                "nome": "Pousada Picinguaba",
+                "preco": "2.380,00",
+                "estrelas": 5
+            }
+        ],
+        "moeda":"R$",
+        "pessoas": 2,
+        "tempo": "Por noite"
+    },
+    {
+        "pais": "Brasil",
+        "estado": "Rio de Janeiro",
+        "local": "Petrópolis",
+        "hoteis": [
+            {
+                "nome": "HMG Morada & Chalet - Centro histórico",
+                "preco": "160,00",
+                "estrelas": 3
+            },
+            {
+                "nome": "Kastel Grão Pará",
+                "preco": "300,00",
+                "estrelas": 4
+            },
+            {
+                "nome": "Casa Marambaia Hotel",
+                "preco": "1.270,00",
+                "estrelas": 5
+            }
+        ],
+        "moeda":"R$",
+        "pessoas": 2,
+        "tempo": "Por noite"
     }
 ]

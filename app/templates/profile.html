@@ -1,12 +1,42 @@
 {% extends 'base.html' %}
 
 {% block base %}
-<h1>Meu Perfil</h1>
-<p>Nome: {{user}}</p>
-<p>Email: {{email}}</p>
-<p>Celular: {{cel}}</p>
+<style>
+    
+    .pfpgrande{
+    height: 100px;
+    }
+    .perfilzin{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .alterarft{
+        display: flex;
+        flex-direction: column;
+    }
+</style>
 
-<p></p>
+<br>
+<div class="perfilzin">
+    <div class="informa">
+        <h1>Meu Perfil</h1>
+        <br>
+        <p>Nome: {{user}}</p>
+        <p>Email: {{email}}</p>
+        <p>Celular: {{cel}}</p>
 
-<a href="/logout">Logout</a>
+        <br>
+        
+        <a style="color: red; text-decoration: underline;" href="/logout">Logout</a>
+    </div>
+
+    
+    <div class="alterarft">
+        <img class="pfpgrande" src="{{url_for('static',filename='images/defpfp.jpg')}}" alt="foto de perfil">
+    </div>
+
+</div>
+<br>
+
 {% endblock %}

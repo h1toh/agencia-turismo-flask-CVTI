@@ -1,33 +1,49 @@
 from app import app
 from flask import redirect, request, render_template, flash, session
-import json, os, app.ofer as of
+import json, os, app.ofer as of, requests
 
 app.secret_key = 'CVTI'
 
 @app.route("/")
-def redirectHome():
-    return redirect('/home')
+def loading():
+    return render_template('loading.html')
 
 @app.route("/home")
 def home():
-    hotel1 = of.ofertas[0]['hoteis'][0]['nome']
-    hotel2 = of.ofertas[0]['hoteis'][1]['nome']
-    hotel3 = of.ofertas[0]['hoteis'][2]['nome']
-    local = of.ofertas[0]['local']
-    estado = of.ofertas[0]['estado']
-    preco1 = of.ofertas[0]['hoteis'][0]['preco']
-    preco2 = of.ofertas[0]['hoteis'][1]['preco']
-    preco3 = of.ofertas[0]['hoteis'][2]['preco']
-    tempo = of.ofertas[0]['tempo']
-    moeda = of.ofertas[0]['moeda']
-    return render_template('home.html', hotel1=hotel1,hotel2=hotel2,hotel3=hotel3, local=local, estado=estado, preco1=preco1,preco2=preco2,preco3=preco3, tempo=tempo, moeda=moeda)
+    hoteis = []
+    precos = []
+    locais = []
+    estados = []
+    tempos = []
+    moedas = []
+
+    for i in range(3):
+        local = of.ofertas[i]['local']
+        estado = of.ofertas[i]['estado']
+        tempo = of.ofertas[i]['tempo']
+        moeda = of.ofertas[i]['moeda']
+        for k in range(3):
+            hotel = of.ofertas[i]['hoteis'][k]['nome']
+            preco = of.ofertas[i]['hoteis'][k]['preco']
+            locais.append(local)
+            hoteis.append(hotel)
+            precos.append(preco)
+            estados.append(estado)
+            tempos.append(tempo)
+            moedas.append(moeda)
+
+    return render_template('home.html', locais=locais, hoteis=hoteis, precos=precos, estados=estados, tempos=tempos, moedas=moedas)
 
 @app.route("/viagens")
 def viagens():
+    if 'email' not in session:
+        return redirect('/login')
     return render_template('viagens.html')
 
 @app.route("/favoritos")
 def favoritos():
+    if 'email' not in session:
+        return redirect('/login')
     return render_template('favoritos.html')
 
 @app.route("/conectar")
@@ -56,7 +72,7 @@ def auth():
                         session['user'] = c['nome']
                         session['email'] = c['email']
                         session['celular'] = c['celular']
-                        return redirect('/home')
+                        return redirect('/')
                 flash('Email ou senha incorretos.', 'error')
                 return redirect('/login')
         else:
@@ -95,11 +111,22 @@ def createAcc():
 @app.route('/profile')
 def profile():
     if 'email' not in session:
-        return redirect('/home')
+        return redirect('/login')
     return render_template('profile.html', email = session['email'], user = session['user'], cel = session['celular'])
 
 @app.route('/logout')
 def logout():
     session.pop('user', None)
     session.pop('email', None)
-    return redirect('/home')
+    return redirect('/')
+
+@app.route('/pesquisar', methods=['GET'])
+def pesquisar():
+    return """<head><title>Aterrissar.com</title></head>oi"""
+
+@app.route('/explore/rj/copacabana/hilton')
+def hilton():
+    cep = 22011010
+    link = f'https://brasilapi.com.br/api/cep/v1/{cep}'
+    info = requests.get(link).json()
+    return render_template('hilton.html', info=info)

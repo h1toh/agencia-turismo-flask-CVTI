@@ -13,9 +13,10 @@
             padding: 50px 0;
         }
 
-        .majestic {
+        .images {
             height: 170px;
             border-radius: 6px;
+            transition: 0.2s ease-in-out;
         }
 
         .card {
@@ -31,50 +32,200 @@
             width: 270px;
             overflow: hidden;
         }
+
+        .cd {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background-color: white;
+            gap: 20px;
+        }
+
+        .ht {
+            padding-left: 10px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .lcl {
+            padding-left: 10px;
+            font-size: 13px;
+            color: gray;
+        }
+
+        .preço {
+            font-size: 20px;
+            color: rgb(223, 77, 24);
+        }
+
+        .pr {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+            padding: 10px 0;
+        }
+
+        .ancora {
+            text-decoration: none;
+        }
+
+        #heart {
+            display: inline-block;
+            aspect-ratio: 1;
+            border-image: radial-gradient(rgba(255, 0, 0, 0.137) 69%, #0000 70%) 84.5%/50%;
+            clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+            width: 25px;
+            cursor: pointer;
+        }
+
+        .pesquisa input {
+            border-radius: 10px;
+            border: gray solid 1px;
+            height: 50px;
+            width: 400px;
+            padding: 0 10px;
+            font-size: 17px;
+        }
+
+        .btn {
+            background-color: rgb(28, 69, 255);
+            color: white;
+            border-radius: 25px;
+            height: 50px;
+            width: 125px;
+            border: none;
+            font-size: 17px;
+        }
+
+        .h1s {
+            width: 1000px;
+            display: flex;
+            justify-content: left;
+        }
+
+        .imagess {
+            height: 200px;
+            border-radius: 6px;
+        }
+
+        .images:hover {
+            transform: scale(1.1);
+
+        }
+
+        .textu {
+            position: relative;
+            top: -200px;
+            left: 10px;
+            color: white;
+            font-size: 21px;
+            text-shadow: 0px 1px 4px #23430C;
+        }
+        .kkk{
+            overflow: hidden;
+            border-radius: 6px;
+            height: 170px;
+        }
+
+        .perfeitos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 
 <body>
     <main id="ofertas">
-        <h1>Ofertas imperdiveis!</h1>
-        <main style="
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        background-color: white;
-        gap: 20px;">
+
+        <main class="pesquisa">
+
+            <form action="pesquisar" method="get">
+                <input type="search" placeholder="Para onde você vai?" name="pesquisa" id="pesquisa">
+                <button class="btn" type="submit">Buscar</button>
+            </form>
+
+        </main>
+        <br>
+
+        <div class="h1s">
+            <h1>Hospedagens mais populares</h1>
+        </div>
+        <br>
+        <main class="cd">
+
 
             <div class="card">
                 <div>
-                    <img class="majestic" src="{{url_for('static',filename='images/majestic.jpg')}}" alt="majestic">
-                    <h1 style="font-size: 20px;">{{ hotel1 }}</h1>
-                    <p style="font-size: 13px; color: gray;">{{ local }}, {{ estado }}</p>
+                    <a class="ancora" href="/explore/rj/copacabana/hilton">
+                        <div class="kkk">
+                            <img class="images" src="{{url_for('static',filename='images/hilton.png')}}" alt="hilton">
+                        </div>
+                        <h1 class="ht">{{ hoteis[2] }}</h1>
+                        <p class="lcl">{{ locais[2] }}, {{ estados[2] }}</p>
+                    </a>
                 </div>
-                <div style="display: flex;
-                    align-items: center;
-                    margin-left: 100px;">
-                    <p style="color: gray;
-                    font-size: 13px;">{{ tempo }}</p>
-                    <h1 style="font-size: 20px; color: rgb(223, 77, 24);">{{ moeda }} {{ preco1 }}</h1>
+                <div class="pr">
+                    <div title="Favoritar" id="heart"></div>
+                    <h1 class="preço">{{ moedas[2] }} {{ precos[2] }}</h1>
                 </div>
             </div>
 
             <div class="card">
                 <div>
-                    <img class="majestic" src="{{url_for('static',filename='images/astoria.jpg')}}" alt="majestic">
-                    <h1 style="font-size: 20px;">{{ hotel2 }}</h1>
-                    <p style="font-size: 13px; color: gray;">{{ local }}, {{ estado }}</p>
+                        <a class="ancora" href="#">
+                        <div class="kkk">
+                            <img class="images" src="{{url_for('static',filename='images/ferraria.png')}}" alt="ferraria">
+                        </div>
+                        <h1 class="ht">{{ hoteis[4] }}</h1>
+                        <p class="lcl">{{ locais[4] }}, {{ estados[2] }}</p>
+                    </div>
+                </a>
+                    <div class="pr">
+                        <div title="Favoritar" id="heart"></div>
+                        <h1 class="preço">{{ moedas[2] }} {{ precos[4] }}</h1>
+                    </div>
                 </div>
-                <div style="display: flex;
-                    align-items: center;
-                    margin-left: 100px;">
-                    <p style="color: gray;
-                    font-size: 13px;">{{ tempo }}</p>
-                    <h1 style="font-size: 20px; color: rgb(223, 77, 24);">{{ moeda }} {{ preco2 }}</h1>
-                </div>
-            </div>
 
+                <div class="card">
+                    <div>
+                        <a class="ancora" href="#">
+                        <div class="kkk">
+                            <img class="images" src="{{url_for('static',filename='images/marambaia.png')}}" alt="ferraria">
+                        </div>
+                        <h1 class="ht">{{ hoteis[8] }}</h1>
+                        <p class="lcl">{{ locais[8] }}, {{ estados[3] }}</p>
+                    </div>
+                </a>
+                    <div class="pr">
+                        <div title="Favoritar" id="heart"></div>
+                        <h1 class="preço">{{ moedas[3] }} {{ precos[8] }}</h1>
+                    </div>
+                </div>
+
+        </main>
+
+        <br>
+        <div class="h1s">
+            <h1>Explore lugares perfeitos</h1>
+        </div>
+        <br>
+        <main class="perfeitos">
+            <div class="imgh1">
+                <img class="imagess" src="{{url_for('static',filename='images/petropolis.png')}}">
+                <h1 class="textu">{{ locais[6]}}</h1>
+            </div>
+            <div class="imgh1">
+                <img class="imagess" src="{{url_for('static',filename='images/copacabana.png')}}">
+                <h1 class="textu">{{ locais[0] }}</h1>
+            </div>
+            <div class="imgh1">
+                <img class="imagess" src="{{url_for('static',filename='images/paraty.png')}}">
+                <h1 class="textu">{{ locais[3] }}</h1>
+            </div>
         </main>
 
     </main>
