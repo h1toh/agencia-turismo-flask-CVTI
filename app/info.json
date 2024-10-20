@@ -15,12 +15,14 @@
                 "estrelas": 4
             },
             {
-                "nome": "Hilton RJ Copacabana",
+                "nome": "Hilton Copacabana RJ",
                 "preco": "1.240,00",
-                "estrelas": 5
+                "estrelas": 5,
+                "lat": -22.964587,
+                "lon": -43.173303
             }
         ],
-        "moeda":"R$",
+        "moeda": "R$",
         "pessoas": 2,
         "tempo": "Por noite"
     },
@@ -45,7 +47,7 @@
                 "estrelas": 5
             }
         ],
-        "moeda":"R$",
+        "moeda": "R$",
         "pessoas": 2,
         "tempo": "Por noite"
     },
@@ -70,7 +72,7 @@
                 "estrelas": 5
             }
         ],
-        "moeda":"R$",
+        "moeda": "R$",
         "pessoas": 2,
         "tempo": "Por noite"
     }

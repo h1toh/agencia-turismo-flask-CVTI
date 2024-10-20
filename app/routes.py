@@ -1,6 +1,6 @@
 from app import app
-from flask import redirect, request, render_template, flash, session
-import json, os, app.ofer as of, requests
+from flask import redirect, request, render_template, flash, session, jsonify
+import json, os, app.ofer as of, requests, math, uuid
 
 app.secret_key = 'CVTI'
 
@@ -32,7 +32,52 @@ def home():
             tempos.append(tempo)
             moedas.append(moeda)
 
-    return render_template('home.html', locais=locais, hoteis=hoteis, precos=precos, estados=estados, tempos=tempos, moedas=moedas)
+
+    public_ip_link = 'https://api.ipify.org/'
+    public_ip = requests.get(public_ip_link).text
+    # IP Público do usuário 
+
+    geolocation_link = f'http://ip-api.com/json/{public_ip}'
+    geolocation_api = requests.get(geolocation_link).json()
+    # Geolocalização do usuário
+
+    user_lat = geolocation_api['lat'] 
+    user_lon = geolocation_api['lon']
+    user_city = geolocation_api['city']
+    # Latitude e longitude do usuário
+
+    copacabana_lat = -22.970722
+    copacabana_lon = -43.182365
+
+    paraty_lat = -23.2167
+    paraty_lon = -44.7179
+
+    petropolis_lat = -22.5046
+    petropolis_lon = -43.1823
+
+    def haversine(lat1, lon1, lat2, lon2):
+        lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
+        # Graus para radianos
+
+        dlat = lat2 - lat1
+        dlon = lon2 - lon1
+        #Diferença entre lat. e lon.
+
+        a = math.sin(dlat/2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon/2)**2
+        c = 2 * math.atan2(math.sqrt(a),math.sqrt(1-a))
+        # Fórmula de haversine
+
+        R = 6371.0
+        # Raio de Terra em km
+
+        distancia = R*c
+        return distancia
+
+    copacabana_distance = math.floor(haversine(copacabana_lat,copacabana_lon,user_lat,user_lon))
+    paraty_distance = math.floor(haversine(paraty_lat,paraty_lon,user_lat,user_lon))
+    petropolis_distance = math.floor(haversine(petropolis_lat,petropolis_lon,user_lat,user_lon))
+
+    return render_template('home.html', locais=locais, hoteis=hoteis, precos=precos, estados=estados, tempos=tempos, moedas=moedas, petropolis_distance=petropolis_distance, copacabana_distance=copacabana_distance, paraty_distance=paraty_distance)
 
 @app.route("/viagens")
 def viagens():
@@ -42,8 +87,6 @@ def viagens():
 
 @app.route("/favoritos")
 def favoritos():
-    if 'email' not in session:
-        return redirect('/login')
     return render_template('favoritos.html')
 
 @app.route("/conectar")
@@ -69,9 +112,11 @@ def auth():
                 conta = json.load(link)
                 for c in conta:
                     if c['email'] == email and c['senha'] == senha:
-                        session['user'] = c['nome']
+                        session['nome'] = c['nome']
+                        session['sobrenome'] = c['sobrenome']
                         session['email'] = c['email']
                         session['celular'] = c['celular']
+                        session['user_uuid'] = c['user_uuid']
                         return redirect('/')
                 flash('Email ou senha incorretos.', 'error')
                 return redirect('/login')
@@ -85,11 +130,12 @@ def auth():
 @app.route("/creating", methods=['POST'])
 def createAcc():
     nomeSignup = request.form.get('nome')
+    sobrenomeSignup = request.form.get('sobrenome')
     emailSignup = request.form.get('email')
     celularSignup = request.form.get('celular')
     senhaSignup = request.form.get('senha')
-
-    nova_conta = dict(nome=nomeSignup, email=emailSignup, celular=celularSignup, senha=senhaSignup)
+    user_uuid = str(uuid.uuid4())
+    nova_conta = dict(nome=nomeSignup, sobrenome=sobrenomeSignup, email=emailSignup, celular=celularSignup, senha=senhaSignup, user_uuid=user_uuid)
 
     try:
         if os.path.exists('app/conta.json'):
@@ -112,12 +158,15 @@ def createAcc():
 def profile():
     if 'email' not in session:
         return redirect('/login')
-    return render_template('profile.html', email = session['email'], user = session['user'], cel = session['celular'])
+    return render_template('profile.html', email = session['email'], nome = session['nome'], sobrenome = session['sobrenome'], cel = session['celular'], user_uuid = session['user_uuid'])
 
 @app.route('/logout')
 def logout():
-    session.pop('user', None)
+    session.pop('nome', None)
+    session.pop('sobrenome', None)
     session.pop('email', None)
+    session.pop('celular', None)
+    session.pop('user_uuid', None)
     return redirect('/')
 
 @app.route('/pesquisar', methods=['GET'])

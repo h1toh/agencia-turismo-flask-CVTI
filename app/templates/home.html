@@ -104,13 +104,16 @@
             width: 1000px;
             display: flex;
             justify-content: left;
+            flex-direction: column;
         }
 
         .imagess {
             height: 200px;
             border-radius: 6px;
         }
-
+        .imgh1{
+            max-height: 200px;
+        }
         .images:hover {
             transform: scale(1.1);
 
@@ -124,6 +127,14 @@
             font-size: 21px;
             text-shadow: 0px 1px 4px #23430C;
         }
+        .dist{
+            position: relative;
+            top: -200px;
+            left: 10px;
+            color: white;
+            font-size: 14px;
+            text-shadow: 0px 2px 4px #23430C;
+        }
         .kkk{
             overflow: hidden;
             border-radius: 6px;
@@ -134,6 +145,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 5px;
         }
     </style>
 </head>
@@ -169,7 +181,7 @@
                     </a>
                 </div>
                 <div class="pr">
-                    <div title="Favoritar" id="heart"></div>
+                    <div title="Favoritar" id="heart""></div>
                     <h1 class="preço">{{ moedas[2] }} {{ precos[2] }}</h1>
                 </div>
             </div>
@@ -210,21 +222,25 @@
 
         <br>
         <div class="h1s">
-            <h1>Explore lugares perfeitos</h1>
+            <h1>Explore lugares perto de você</h1>
+            <p>Destinos incríveis mais próximos a você</p>
         </div>
         <br>
         <main class="perfeitos">
             <div class="imgh1">
                 <img class="imagess" src="{{url_for('static',filename='images/petropolis.png')}}">
                 <h1 class="textu">{{ locais[6]}}</h1>
+                <h2 class="dist">a {{ petropolis_distance }}km de você</h2>
             </div>
             <div class="imgh1">
                 <img class="imagess" src="{{url_for('static',filename='images/copacabana.png')}}">
-                <h1 class="textu">{{ locais[0] }}</h1>
+                <h1 class="textu">{{ locais[0] }} </h1>
+                <h2 class="dist">a {{ copacabana_distance }}km de você</h2>
             </div>
             <div class="imgh1">
                 <img class="imagess" src="{{url_for('static',filename='images/paraty.png')}}">
                 <h1 class="textu">{{ locais[3] }}</h1>
+                <h2 class="dist">a {{ paraty_distance }}km de você</h2>
             </div>
         </main>
 

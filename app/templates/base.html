@@ -14,12 +14,14 @@
 <body>
     
     <header class="cabecalho">
-        <a href="/home">Aterrissar</a>
+        <a style="color: white;" href="/home">Aterrissar</a>
         <nav class="links">
             <a href="/viagens">Viagens</a> 
             <a href="/favoritos">Favoritos</a>
-            {% if session['user'] %}
+            {% if session['nome'] %}
+            <div class="ftt">
                 <a href="/profile"><img class="pfp" title="Meu Perfil" src="{{url_for('static',filename='images/defpfp.jpg')}}" alt=""></a>
+            </div>
             {% else %}
                 <a href="/conectar">Conectar</a>
             {% endif %}

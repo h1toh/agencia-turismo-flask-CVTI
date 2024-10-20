@@ -15,16 +15,25 @@
         display: flex;
         flex-direction: column;
     }
+    .uuid{
+        font-size: 11px;
+        color: gray;
+    }
+    .vazio{
+        height: 60vh;
+    }
 </style>
 
 <br>
+
 <div class="perfilzin">
     <div class="informa">
         <h1>Meu Perfil</h1>
         <br>
-        <p>Nome: {{user}}</p>
+        <p>Nome: {{nome}} {{sobrenome}}</p>
         <p>Email: {{email}}</p>
         <p>Celular: {{cel}}</p>
+        <p class="uuid">ID: {{user_uuid}}</p>
 
         <br>
         
@@ -38,5 +47,6 @@
 
 </div>
 <br>
+<div class="vazio"></div>
 
 {% endblock %}

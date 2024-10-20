@@ -1,7 +1,210 @@
 {% extends 'base.html' %}
 {% block base %}
-<main>
-    <h1> Copacabana Hilton RJ </h1>
-    <p>{{info['street']}}, {{info['neighborhood']}}, {{info['city']}}, CEP {{info['cep']}}</p>
-</main>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+     <style>
+        #map { 
+            height: 340px; 
+            width: 60%;
+        }
+        .titulo{
+            font-size: 25px;
+        }
+        .endereco{
+            font-size: 14px;
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .conectarbtn {
+            background-color: rgb(28, 69, 255);
+            color: white;
+            border-radius: 7px;
+            height: 45px;
+            width: 110px;
+            border: none;
+            font-size: 7px;
+            cursor: pointer;
+
+        }
+        .batata{
+            width: 80%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .caract{
+            display: flex;
+            
+            flex-direction: column;
+        }
+        .c{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .list{
+            height: 40px;
+            width: 170px;
+            border: rgb(233, 233, 233) solid 1px;
+            border-radius: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            padding: 10px;
+            cursor: default;
+        }
+        .descricao{
+            width: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .vazio{
+            height: 10vh;
+        }
+        .vazio2{
+            height: 5vh;
+        }
+        .img{
+            height: 200px;
+            border-radius: 9px;
+        }
+        .img2{
+            height: 400px;
+            margin-top: 5px;
+            border-radius: 9px;
+        }
+        .img3{
+            margin-top: 5px;
+            border-radius: 9px;
+        }
+        .areaimg{
+            height: 395px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+        }
+        .imgtotal{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+     </style>
+<body>
+    <div class="vazio2"></div>
+    <main>
+        <div class="batata">
+            <div>
+                <h1 class="titulo"> Hilton Copacabana Rio de Janeiro </h1>
+                <p class="endereco">Avenida Atlantica, 1020, {{info['neighborhood']}}, {{info['city']}}, CEP {{info['cep']}}, Brasil</p>
+            </div>
+                <button class="conectarbtn">
+                    <h1>Fazer reserva</h1>
+                </button>
+        </div>
+        <br>
+        <div class="imgtotal2">
+            <div class="imgtotal">
+                <div class="areaimg">
+                    <img class="img" src="https://cf.bstatic.com/xdata/images/hotel/max500/531848787.jpg?k=fda2433eb0454db01d7092b7a7b38df053a74ef53bc37fccc026305468f349e9&o=" alt="">
+                    <img class="img" src="https://cf.bstatic.com/xdata/images/hotel/max500/531848788.jpg?k=c12aaf5f4a4ea0d0e08b1ebe19f992149d91e10988e6afcf8767295df7dc7a49&o=" alt="">
+                </div>
+                <div>
+                    <img class="img2" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/531848784.jpg?k=3e0931472c3362a4b6b46474099462573fef941e7226092c0eb03831c089ce87&o=" alt="">
+                </div>
+            </div>
+            <div>
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max300/531848790.jpg?k=3cc1d2474cce6192dd0b396c8314603a65ff4ef7c8db2891bd1806e17e999e5a&o=" alt="" class="img3">
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max300/531848793.jpg?k=60f0a793ba628ab3efb80ea38de0ed9653911f7a92dfa2ab3552338e9be4f7b8&o=" alt="" class="img3">
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max300/531848796.jpg?k=3faf4a5c7c577d4d46e1d0943f5c2f816114c2bbb09a3d3e2e83601a50c0a359&o=" alt="" class="img3">
+            </div>
+        </div>
+        <br>
+        <div class="caract">
+            <div class="c">
+                <div class="list">
+                    <p>Café da manhã incluso</p>
+                </div>
+
+                <div class="list">
+                    <p>Estacionamento privativo</p>
+                </div>
+
+                <div class="list">
+                    <p>2 piscinas</p>
+                </div>
+
+                <div class="list">
+                <p>2 restaurantes</p>
+                </div>
+
+                <div class="list">
+                    <p>Aceita pets</p>
+                </div>
+
+            </div>
+            <div class="c">
+                <div class="list">
+                    <p>Transfer (aeroporto)</p>
+                </div>
+
+                <div class="list">
+                    <p>Spa / Centro de bem-estar</p>
+                </div>
+
+                <div class="list">
+                    <p>Wi-Fi Gratuito</p>
+                </div>
+
+                <div class="list">
+                <p>Academia</p>
+                </div>
+
+                <div class="list">
+                <p>Ar-condicionado</p>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <div id="map"></div>
+        <br>
+        <div>
+            <h1 style="font-size: 19px;">Receba tratamento de celebridade com serviço de primeira classe em Hilton Copacabana Rio de Janeiro</h1>
+            <br>
+            <div class="descricao">
+                <p style="font-size: 13px;">O Hilton Rio de Janeiro Copacabana é um hotel 5 estrelas, situado em frente às águas azuis da Praia de Copacabana. A propriedade dispõe de um spa elegante e uma piscina na cobertura, ambos com vista deslumbrante para o mar. 
+                <br>
+                <br>
+                Os quartos do Hilton Rio de Janeiro Copacabana são sofisticados, bem iluminados e possuem ar-condicionado, TV e frigobar. As acomodações apresentam decoração elegante e contemporânea com móveis de madeira e tons neutros aconchegantes. A maioria dos quartos tem vista incrível do mar.
+                <br>
+                <br>
+                Diariamente, você pode desfrutar do famoso buffet de café de manhã com frutas da estação e itens de confeitaria. O spa do hotel oferece uma variedade de tratamentos. Há uma 2ª piscina no 4º andar, onde o restaurante do hotel está situado. Você pode também se exercitar ou relaxar com uma sessão de sauna na academia.
+                <br>
+                <br>
+                Lojas encantadoras, restaurantes e bares animados ficam a apenas 2 quarteirões do hotel. O Forte de Copacabana fica a 3,2 km. O Aeroporto Santos Dumont está localizado a 9,6 km, enquanto o Aeroporto Internacional do Galeão fica a 27,6 km de distância.</p>
+            </div>
+        </div>
+    </main>
+    
+    <div class="vazio"></div>
+
+
+    <script src="{{url_for('static',filename='js/leaflet.js')}}"></script>
+</body>
 {% endblock %}
