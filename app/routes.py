@@ -1,6 +1,11 @@
 from app import app
 from flask import redirect, request, render_template, flash, session, jsonify
 import json, os, app.ofer as of, requests, math, uuid
+import datetime
+
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+from pprint import pprint
 
 app.secret_key = 'CVTI'
 
@@ -179,3 +184,52 @@ def hilton():
     link = f'https://brasilapi.com.br/api/cep/v1/{cep}'
     info = requests.get(link).json()
     return render_template('hilton.html', info=info)
+
+def carregar_avaliacoes():
+    with open('app/avaliacao.json', 'r', encoding='utf-8') as file:
+        avaliacoes = json.load(file)
+    return avaliacoes
+
+@app.route('/avaliacao/<hospedagem>')
+def notas(hospedagem):
+    avaliacoes = carregar_avaliacoes()
+
+    avaliacoes_filtradas = [
+        avaliacao for avaliacao in avaliacoes if avaliacao['hospedagem'].lower() == hospedagem.lower()
+    ]
+
+    nome = session.get('nome', 'Usuário')  # 'Usuário' é o valor padrão caso 'nome' não esteja presente
+    sobrenome = session.get('sobrenome', '')
+
+    return render_template('notas.html', nome = nome, sobrenome = sobrenome,avaliacoes=avaliacoes_filtradas, hospedagem = hospedagem)
+
+@app.route('/enviarnota', methods=['POST'])
+def enviarnota():
+    data_agora = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
+    user_comentario = request.form.get('comentario')
+    hospedagem = request.form.get('hospedagem')
+    nova_avaliacao = dict(hospedagem = hospedagem,nome=session['nome'],sobrenome=session['sobrenome'],comentario=user_comentario, data_envio=data_agora)
+
+    try:
+        if os.path.exists('app/avaliacao.json'):
+            with open('app/avaliacao.json','r') as aval:
+                avaliacao = json.load(aval)
+        else:
+            avaliacao = []
+        avaliacao.append(nova_avaliacao)
+
+        with open('app/avaliacao.json','w') as aval:
+            json.dump(avaliacao, aval, indent=4, ensure_ascii=False)
+        return redirect(f'/avaliacao/{hospedagem}')
+    except:
+        return redirect(f'/avaliacao/{hospedagem}')
+
+@app.route('/reservas')
+def reserva():
+    return 'wip'
+
+
+
+
+
+

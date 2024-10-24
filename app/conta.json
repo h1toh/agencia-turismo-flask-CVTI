@@ -6,5 +6,29 @@
 		"celular": "21987025814",
 		"senha": "1234",
 		"user_uuid": "f4118c10-ebad-4dbf-b0e5-28eb644d6fc4"
+	},
+	{
+		"nome": "Lukas",
+		"sobrenome": "Gumas",
+		"email": "bluegomes123@gmail.com",
+		"celular": "21987025814",
+		"senha": "1234",
+		"user_uuid": "77f24ff9-300e-434e-8b37-d4220b1ab327"
+	},
+	{
+		"nome": "Felipe",
+		"sobrenome": "Neto",
+		"email": "felipeneto@gmail.com",
+		"celular": "21987025817",
+		"senha": "1234",
+		"user_uuid": "3a913d8b-4950-44cf-af3f-c281e87883d4"
+	},
+	{
+		"nome": "jonatas",
+		"sobrenome": "capudo",
+		"email": "jon@gmail.com",
+		"celular": "21987025814",
+		"senha": "1234",
+		"user_uuid": "0534cf09-e396-471d-8560-c29e5ce09016"
 	}
 ]

@@ -33,7 +33,6 @@
             border: none;
             font-size: 7px;
             cursor: pointer;
-
         }
         .batata{
             width: 80%;
@@ -104,6 +103,16 @@
             align-items: center;
             gap: 5px;
         }
+        .avaliacoes{
+            background-color: white;
+            color: rgb(28, 69, 255);
+            border-radius: 7px;
+            border: rgb(28, 69, 255) solid 1px;
+            height: 45px;
+            width: 110px;
+            font-size: 7px;
+            cursor: pointer;
+        }
      </style>
 <body>
     <div class="vazio2"></div>
@@ -113,9 +122,18 @@
                 <h1 class="titulo"> Hilton Copacabana Rio de Janeiro </h1>
                 <p class="endereco">Avenida Atlantica, 1020, {{info['neighborhood']}}, {{info['city']}}, CEP {{info['cep']}}, Brasil</p>
             </div>
-                <button class="conectarbtn">
-                    <h1>Fazer reserva</h1>
-                </button>
+            <div>
+                <a href="/avaliacao/hilton">
+                    <button class="avaliacoes">
+                        <h1>Ver avaliações</h1>
+                    </button>
+                </a>
+                <a href="/reservas">
+                    <button class="conectarbtn">
+                        <h1>Fazer reserva</h1>
+                    </button>
+                </a>
+            </div>
         </div>
         <br>
         <div class="imgtotal2">
