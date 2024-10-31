@@ -15,7 +15,7 @@
                 "estrelas": 4
             },
             {
-                "nome": "Hilton Copacabana RJ",
+                "nome": "Hilton Copacabana",
                 "preco": "1.240,00",
                 "estrelas": 5,
                 "lat": -22.964587,
@@ -69,6 +69,56 @@
             {
                 "nome": "Casa Marambaia Hotel",
                 "preco": "1.270,00",
+                "estrelas": 5
+            }
+        ],
+        "moeda": "R$",
+        "pessoas": 2,
+        "tempo": "Por noite"
+    },
+    {
+        "pais": "Brasil",
+        "estado": "Rio de Janeiro",
+        "local": "Arraial do Cabo",
+        "hoteis": [
+            {
+                "nome": "Pousada Vila Praiana",
+                "preco": "1.069,00",
+                "estrelas": 3
+            },
+            {
+                "nome": "Varandas ao Mar",
+                "preco": "2.646,00",
+                "estrelas": 4
+            },
+            {
+                "nome": "Pousada Vista Turquesa",
+                "preco": "5.690,00",
+                "estrelas": 5
+            }
+        ],
+        "moeda": "R$",
+        "pessoas": 2,
+        "tempo": "Por noite"
+    },
+    {
+        "pais": "Brasil",
+        "estado": "Rio de Janeiro",
+        "local": "Nova Iguaçu",
+        "hoteis": [
+            {
+                "nome": "Pousada Vila Praiana",
+                "preco": "1.069,00",
+                "estrelas": 3
+            },
+            {
+                "nome": "Varandas do Arraial - Hostel",
+                "preco": "2.646,00",
+                "estrelas": 4
+            },
+            {
+                "nome": "Pousada Vista Turquesa",
+                "preco": "5.690,00",
                 "estrelas": 5
             }
         ],

@@ -7,7 +7,7 @@
         color: black;
     }
 
-    .pfp {
+    .pfpp {
         height: 40px;
         border-radius: 50%;
     }
@@ -54,7 +54,6 @@
 
     .data {
         font-size: 11px;
-        margin-top: 4px;
     }
 
     .infocom {
@@ -78,7 +77,8 @@
     .vazio {
         height: 40vh;
     }
-    .conec:hover{
+
+    .conec:hover {
         text-decoration: underline;
     }
 </style>
@@ -90,16 +90,19 @@
 
         <main>
             <br>
-            <h1 style="font-size: 22px;">Avaliações de {{hospedagem}} </h1>
+            <h1 style="font-size: 22px;">Avaliações</h1>
             <br>
             <div class='hhh'>
-                <img class="pfp" src="{{url_for('static', filename = 'images/defpfp.jpg')}}" alt="">
+                <img class="pfpp" src="{{url_for('static', filename = 'images/defpfp.jpg')}}" alt="">
                 <h1>{{nome}} {{sobrenome}}</h1>
             </div>
             <br>
             <form action="/enviarnota" method="post">
                 <input type="hidden" name="hospedagem" id="hospedagem" value="{{hospedagem}}">
-                <textarea class="comentario" name="comentario" placeholder="Seu comentário" id="comentario"></textarea>
+                <label for="rating">Sua nota:</label><br>
+                <input type="number" id="rating" name="rating" min="1" max="5" required><br>
+                <br>
+                <textarea required class="comentario" name="comentario" placeholder="Seu comentário" id="comentario"></textarea>
                 <br>
                 <button type="submit">Enviar</button>
             </form>
@@ -109,10 +112,10 @@
         {% else %}
         <main>
             <br>
-            <h1 style="font-size: 22px;">Avaliações de {{hospedagem}} </h1>
+            <h1 style="font-size: 22px;">Avaliações</h1>
             <br>
             <div class='hhh'>
-                <img class="pfp" src="{{url_for('static', filename = 'images/defpfp.jpg')}}" alt="">
+                <img class="pfpp" src="{{url_for('static', filename = 'images/defpfp.jpg')}}" alt="">
                 <a href="/conectar">
                     <h1 class="conec">Conectar</h1>
                 </a>
@@ -125,13 +128,14 @@
         <div class="separa"></div>
         <div class="avaliacao">
             <div class="comentariostodos">
-                <img class="pfp" src="{{url_for('static', filename = 'images/defpfp.jpg')}}" alt="">
+                <img class="pfpp" src="{{url_for('static', filename = 'images/defpfp.jpg')}}" alt="">
                 <div class="infocom">
                     <p><strong>{{ avaliacao['nome'] }}</strong></p>
                     <p class="data">{{ avaliacao['data_envio'] }}</p>
                 </div>
             </div>
 
+            <p><strong>Nota:</strong> {{ avaliacao['rating'] }}</p>
             <p><strong>Comentário:</strong> {{ avaliacao['comentario'] }}</p>
         </div>
     </div>

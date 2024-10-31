@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% block base %}
+<style>
+    .haha{
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        border: 1px solid rgb(231, 231, 231);
+        padding: 5px;
+    }
+    .haha h1{
+        font-size: 23px;
+    }
+    .haha h2{
+        font-size: 17px;
+    }
+    input {
+        padding: 5px;
+        height: 30px;
+        width: 300px;
+        border-radius: 8px;
+        border: 1px solid rgb(199, 199, 199);
+    }
+    .nm{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    main{
+        display: flex;
+        justify-content: center;
+    }
+    p{
+        color: gray;
+        font-size: 14px;
+    }
+    .mostraemail{
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        border-radius: 8px;
+        border: 1px solid rgb(231, 231, 231);
+        padding: 5px;
+    }
+    .mostraemail h1{
+        font-size: 20px;
+    }
+    .din{
+        display: flex;
+        justify-content: space-between;
+    }
+    .compra{
+        display: flex;    
+        flex-direction: column;
+        border-radius: 8px;
+        border: 1px solid rgb(231, 231, 231);
+        padding: 5px;
+    }
+    .final{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .vazio{
+        height: 7vh;
+    }
+    .select{
+        height: 40px;
+        width: 300px;
+        border-radius: 8px;
+        border: 1px solid rgb(199, 199, 199);
+    }
+    .cliq{
+        cursor: pointer;
+        background-color: rgb(28, 69, 255);
+        color: white; height: 60px; width: 100%; font-size: 16px
+    }
+    .cliqe{
+         height: 60px; width: 100%;
+    }
+    .dates{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<div class="vazio"></div>
+<main>
+    <form action="/concluido" method="post">
+        <input type="hidden" name="hospedagem" value="{{hospedagem}}" id="hospedagem">
+        <input type="hidden" name="endereco" value="{{endereco}}" id="endereco">
+        <input type="hidden" name="preco" value="{{preco}}" id="preco">
+        <div>
+    
+            <div class="mostraemail">
+                <img class="pfp" title="Meu Perfil" src="{{url_for('static',filename='images/defpfp.jpg')}}" alt="">
+                <div>
+                    <h1>Você está conectado</h1>
+                    <p>{{session['email']}}</p>
+                </div>
+            </div>
+    
+            <br>
+        
+            <div class="haha">
+                <h1>Confirme seus dados</h1>
+                <br>
+                <div class="nm">
+                    <div>
+                        <h2>Nome</h2>
+                        <input required type="text" value="{{session['nome']}}" name="nome" id="nome">
+                    </div>
+                    <div>
+                        <h2>Sobrenome</h2>
+                        <input required type="text" value="{{session['sobrenome']}}" name="sobrenome" id="sobrenome">
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <h2>E-mail</h2>
+                    <input required type="email" value="{{session['email']}}" name="email" id="email">
+                </div>
+                <br>
+                <div>
+                    <h2>País/Região</h2>
+                    <select class="select" name="pais" id="pais" required>
+                        {% for pais in paises %}
+                        <option value="pais" {% if pais == pais_selecionado %}selected{% endif %}>{{pais}}</option>
+                        {%endfor%}
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <h2>Telefone</h2>
+                    <input required type="tel" value="{{session['celular']}}" name="telefone" id="telefone">
+                </div>
+            </div>
+    
+            <br>
+    
+            <div class="compra">
+                <h3>{{hospedagem}}</h3>
+                <p>{{endereco}}</p>
+                <h4>1 quarto para 2 adultos</h4>
+                <br>
+                <div class="dates">
+                    <div>
+                        <h5>Entrada</h5>
+                        <input required value="2024-11-20" type="date" name="dateentrada" id="dateentrada">
+                    </div>
+                    <div>
+                        <h5>Saida</h5>
+                        <input required value="2024-11-25" type="date" name="datesaida" id="datesaida">
+                    </div>
+                    
+                </div>
+                <br>
+                <div class="din">
+                    <h2>Total:</h2>
+                    <h2 style="color: rgb(255, 115, 0);">R$ {{preco}}</h2>
+                </div>
+                <br>
+                <div class="final">
+                    <a class="cliqe" href="/concluido">
+                        <input class="cliq" type="submit" value="Finalizar compra">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</main>
+
+<div class="vazio"></div>
+{% endblock %}

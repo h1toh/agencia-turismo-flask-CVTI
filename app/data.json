@@ -1,0 +1,98 @@
+{
+    "majestic": {
+        "nome": "Majestic Rio Palace Hotel",
+        "lat": -22.969927,
+        "lon": -43.1896,
+        "rua": "Rua 5 de Julho, 195, Copacabana, Rio de Janeiro, CEP 22051-030, Brasil",
+        "preco": "335,00",
+        "info": "O Majestic Rio Palace está localizado a 700 metros da Praia de Copacabana e a 550 metros da estação de metrô Siqueira Campos. Dispõe de piscina, sauna e academia no último andar. Oferece Wi-Fi grátis. Todos os quartos possuem ar-condicionado, TV a cabo, frigobar e cofre privativo. Um estacionamento privativo está disponível. O Forte de Copacabana fica a 2,3 km do Majestic Rio Palace Hotel. O Aeroporto Santos Dumont está localizado a 8,9 km de distância, enquanto o Aeroporto Internacional do Galeão fica a 25,7 km da propriedade."
+    },
+    "astoria": {
+        "nome": "Hotel Astoria Copacabana",
+        "lat": -22.970828,
+        "lon": -43.185658,
+        "rua": "Rua 5 de Julho, 195, Copacabana, Rio de Janeiro, CEP 22051-030, Brasil",
+        "preco": "445,00",
+        "info": "Localizado a apenas 300 metros da Praia de Copacabana, no Rio de Janeiro, o Hotel Astoria Copacabana dispõe de piscina ao ar livre, academia e sauna. Este hotel 4 estrelas também fornece um lounge compartilhado e quartos com ar-condicionado, Wi-Fi grátis e banheiro privativo. A acomodação oferece serviço de câmbio para os hóspedes. Os quartos possuem TV de tela plana a cabo e frigobar.  Um buffet de café da manhã é servido diariamente na área para refeições.  O Hotel Astoria Copacabana oferece acomodações com sauna e terraço ao ar livre. Além disso, a recepção 24 horas pode organizar trilhas, transfer e serviço de lavanderia. O Hotel Astoria tem uma localização conveniente, a apenas 350 metros da estação de metrô Cardeal Arcoverde, a 9,6 km do Aeroporto Santos Dumont e a 18 km do Aeroporto Internacional do Galeão."
+    },
+    "hilton": {
+        "nome": "Hilton Copacabana Rio de Janeiro",
+        "lat": -22.964587,
+        "lon": -43.173303,
+        "rua": "Avenida Atlantica, 1020, Copacabana, Rio de Janeiro, CEP 22011-010, Brasil",
+        "preco": "1.240,00",
+        "info": "O Hilton Rio de Janeiro Copacabana é um hotel 5 estrelas, situado em frente às águas azuis da Praia de Copacabana. A propriedade dispõe de um spa elegante e uma piscina na cobertura, ambos com vista deslumbrante para o mar.  Os quartos do Hilton Rio de Janeiro Copacabana são sofisticados, bem iluminados e possuem ar-condicionado, TV e frigobar. As acomodações apresentam decoração elegante e contemporânea com móveis de madeira e tons neutros aconchegantes. A maioria dos quartos tem vista incrível do mar. Diariamente, você pode desfrutar do famoso buffet de café de manhã com frutas da estação e itens de confeitaria. O spa do hotel oferece uma variedade de tratamentos. Há uma 2ª piscina no 4º andar, onde o restaurante do hotel está situado. Você pode também se exercitar ou relaxar com uma sessão de sauna na academia. Lojas encantadoras, restaurantes e bares animados ficam a apenas 2 quarteirões do hotel. O Forte de Copacabana fica a 3,2 km. O Aeroporto Santos Dumont está localizado a 9,6 km, enquanto o Aeroporto Internacional do Galeão fica a 27,6 km de distância."
+    },
+    "turquesa": {
+        "nome": "Pousada e Restaurante Vista Turquesa",
+        "lat": -22.968056,
+        "lon": -42.027222,
+        "rua": "Rua José de Castro Neto, Lote 19 Condomínio Pontal do Atalaia, Arraial do Cabo, CEP 28930-000, Brasil",
+        "preco": "5.690,00",
+        "info": "A Pousada e Restaurante Vista Turquesa oferece Wi-Fi grátis e vista panorâmica do mar do Pontal do Atalaia. Com uma piscina ao ar livre, esta propriedade está localizada a uma curta distância de carro da Prainha do Pontal e da Praia Grande. Os quartos têm mesa de trabalho, TV de tela plana e banheiro privativo. Um guarda-roupa está disponível em todas as acomodações. Você pode saborear um buffet de café da manhã diariamente na propriedade. Os pontos de interesse famosos perto da Pousada e Restaurante Vista Turquesa incluem o Museu Oceanográfico, o Estádio Hermenegildo Barcellos e a Igreja de Nossa Senhora dos Remédios."
+    },
+    "varandas": {
+        "nome": "Varandas do Arraial - Hostel",
+        "lat": -22.969472,
+        "lon": -42.026686,
+        "rua": "8 Rua Nilo Peçanha, Arraial do Cabo, CEP 28930-000, Brasil",
+        "preco": "2.646,00",
+        "info": "Situado a apenas 200 m da Praia dos Anjos, o Varandas do Arraial - Hostel oferece acomodações em Arraial do Cabo com acesso a um jardim, bar e business center. A propriedade oferece cozinha compartilhada, segurança durante todo o dia e Wi-Fi gratuito em todas as áreas. A propriedade oferece quartos família e terraço ao ar livre. Algumas unidades dispõem de sacada e/ou varanda térrea com vista da cidade. Todas as unidades incluem roupa de cama. Atividades como pesca, trilhas a pé e passeios a pé podem ser apreciadas nos arredores, e você pode relaxar à beira-mar. A pousada dispõe de área para piquenique e churrasqueira. Os pontos de interesse famosos próximos ao Varandas do Arraial- Hostel incluem a Praia do Forno, a Prainha e a Igreja de Nossa Senhora dos Remédios. O Aeroporto Internacional de Cabo Frio fica a 9 km da propriedade."
+    },
+    "praiana": {
+        "nome": "Pousada Vila Praiana",
+        "lat": -22.967502,
+        "lon": -42.027641,
+        "rua": "Praça da Independência Número 18, Arraial do Cabo, CEP 28930-000, Brasil",
+        "preco": "1.069,00",
+        "info": "Localizada no centro de Arraial do Cabo e a 700 m da Praia Grande, a Pousada Vila Praiana oferece quartos com ar-condicionado, banheiro privativo, Smart TV e Wi-Fi gratuito. Roupa de cama e toalhas estão incluídas. Esta propriedade fica a uma curta caminhada de atrações como o Museu Oceanográfico, a Igreja de Nossa Senhora dos Remédios e a Praia dos Anjos. Além de estar perto de todo comércio local, como restaurantes e mercados. Além de ter uma sala de estar para uso dos hóspedes, também tem uma cozinha de uso comum. Os quartos duplos e femininos possuem camas de solteiro e ar-condicionado. Os pontos de interesse famosos nas proximidades incluem a Prainha, a Praça da Independência e o Estádio Hermenegildo Barcellos. O aeroporto mais próximo é o Aeroporto Internacional de Cabo Frio, a 8 km de distância."
+    },
+    "patio": {
+        "nome": "Casas do Pátio Pousada & Bar",
+        "lat": -22.973420,
+        "lon": -42.030192,
+        "rua": "Rua dona Geralda, 158, Centro Histórico de Paraty, Paraty, CEP 23970-000, Brasil",
+        "preco": "770,00",
+        "info": "Localizado no centro histórico de Paraty, o Casas do Pátio Pousada & Bar não oferece serviço de bagagem, nem carros podem entrar no estabelecimento. A propriedade oferece quartos com ar-condicionado e WiFi gratuito em todas as áreas. Todos os quartos dispõem de TV de tela plana via satélite. Todos os quartos possuem banheiro privativo com chuveiro. A Casas do Pátio Pousada & Bar fica a 1,5 km da Estação Rodoviária de Paraty e a 2,2 km do Aeroporto de Paraty."
+    },
+    "ferraria": {
+        "nome": "Ferraria Guest House",
+        "lat": -22.974280,
+        "lon": -42.021169,
+        "rua": "404 Rua Coronel José Luiz, Centro Histórico de Paraty, Paraty, CEP 23970-000, Brasil",
+        "preco": "770,00",
+        "info": "Situada bem no centro de Paraty, a uma curta distância da Praia do Cais e da Praia do Pontal, a Ferraria Guest House oferece Wi-Fi gratuito, ar-condicionado e comodidades domésticas, como forno e cafeteira. Esta casa de temporada recentemente renovada está localizada a 1 km da Praia do Jabaquara e a 600 m da Estação Rodoviária de Paraty. A acomodação oferece transfer (aeroporto) e serviço de aluguel de bicicletas. A casa de temporada dispõe de 1 quarto, 1 banheiro, roupa de cama, toalhas, TV de tela plana com serviços de streaming, área para refeições, cozinha totalmente equipada e terraço com vista da cidade. A entrada privativa leva você à casa de temporada, onde você pode desfrutar de vinho ou champanhe e frutas. A propriedade dispõe de área para refeições ao ar livre. Opções de café da manhã à la carte e americano com especialidades locais, itens de confeitaria frescos e panquecas estão disponíveis diariamente na casa de temporada. Nos meses mais quentes, você pode utilizar a churrasqueira e jantar na varanda térrea privativa. Passeios turísticos estão disponíveis ao redor da propriedade. Se você quiser explorar a área, é possível fazer trilhas a pé, passeios a pé e passeios pelos pubs nos arredores, e a Ferraria Guest House pode providenciar um serviço de aluguel de carros. Os pontos de interesse famosos próximos à acomodação incluem a Igreja de Nossa Senhora do Rosário, a Praça da Matriz e a Capela de Nossa Senhora das Dores."
+    },
+    "picinguaba": {
+        "nome": "Pousada Picinguaba",
+        "lat": -23.361530,
+        "lon": -44.842560,
+        "rua": "Rua G, Ubatuba, CEP 11680-000, Brasil",
+        "preco": "2.380,00",
+        "info": "Oferecendo vista deslumbrante da montanha, do mar e da ilha a partir do seu deck na piscina e quartos rústicos, mas modernos, a Pousada Picinguaba está situada no Parque Nacional da Mata Atlântica, a 30 km de Paraty. A Picinguaba ocupa uma casa colonial, onde dispõe de quartos amplos e bem iluminados, com varanda com rede e vista panorâmica do mar e do jardim. Além disso, os quartos incluem ar-condicionado e banheiro privativo. Você pode desfrutar de refeições gourmet no restaurante da pousada, que também serve buffet de café da manhã, bem como frutas e vegetais colhidos do pomar e jardim privativos da propriedade. Além das espreguiçadeiras no terraço, a Pousada Picinguaba oferece vários lounges decorados com arte local. As peças estão disponíveis para venda na boutique da pousada. A equipe da pousada pode organizar passeios turísticos, atividades relaxantes, passeios culturais ao longo da costa e planejar passeios de barco. A Pousada Picinguaba está situada a 40 km de Ubatuba e oferece estacionamento privativo gratuito."
+    },
+    "hmg": {
+        "nome": "HMG Morada & Chalet - Centro histórico",
+        "lat": -23.215150,
+        "lon": -44.711310,
+        "rua": "Avenida Piabanha, Petrópolis, CEP 25680-030, Brasil",
+        "preco": "160,00",
+        "info": "Com Wi-Fi gratuito, a HMG Morada & Chalet - Centro histórico oferece uma experiência histórica nas colinas de Petrópolis, a 1,4 km do Museu Imperial. O Brewer Cervejaria Bohemia fica a 600 metros da propriedade. A construção centenária exclusiva dispõe de quartos equipados com TV com canais via satélite. Para sua comodidade, roupões de banho, amenidades de banho gratuitas e secador de cabelo são fornecidos. Outras comodidades incluem um lounge compartilhado na propriedade. A HMG Morada & Chalet - Centro histórico fica a 400 metros da HMG Morada & Chalet - Centro histórico, enquanto a Catedral de São Pedro de Alcântara está a 900 metros da propriedade. O aeroporto mais próximo é o Aeroporto Internacional do Rio de Janeiro/Galeão, a 35 km da HMG Morada & Chalet - Centro histórico."
+    },
+    "kastel": {
+        "nome": "Kastel Grão Pará",
+        "lat": -22.506860,
+        "lon": -43.178410,
+        "rua": "Praça da Inconfidencia 12, Petrópolis, CEP 25610-090, Brasil",
+        "preco": "300,00",
+        "info": "Com um edifício histórico de 1909 anos na Praça da Inconfidência, em Petrópolis, o Grão Pará fica a apenas 20 metros da Igreja Nossa Senhora do Rosário. Para sua comodidade, a propriedade oferece Wi-Fi grátis e café da manhã diário com frutas e pães. Os quartos possuem decoração elegante, TV LCD com canais via satélite, frigobar e banheiro privativo. Além disso, todos incluem um ar-condicionado. O Kastel Grão-Pará Hotel fica a 6 km do Terminal Rodoviário de Petrópolis e a 500 metros do Museu Imperial. O Aeroporto Internacional do Rio de Janeiro - Galeão fica a 60 km."
+    },
+    "marambaia": {
+        "nome": "Casa Marambaia Hotel",
+        "lat": -22.501380,
+        "lon": -43.198270,
+        "rua": "Rua Doutor Agostinho Goulão nº 2098, Petrópolis, CEP 25730-050, Brasil",
+        "preco": "1.270,00",
+        "info": "Localizado em Petrópolis, o Casa Marambaia Hotel oferece um restaurante. A propriedade dispõe de academia e está localizada a 9 km da Catedral de São Pedro de Alcântara. Todos os quartos incluem varanda com vista para o lago. Os quartos do hotel estão equipados com área de estar, TV de tela plana com canais a cabo e banheiro privativo com secador de cabelo e chuveiro. Todos os quartos incluem guarda-roupa. Um café da manhã à la carte é servido todas as manhãs no Casa Marambaia Hotel. A acomodação pode fornecer informações na recepção para ajudar você a se locomover pela área. A Estação Rodoviária de Petrópolis fica a 13 km do Casa Marambaia Hotel. Já o Aeroporto Internacional do Rio de Janeiro - Galeão fica a 43 km da propriedade."
+    }
+}

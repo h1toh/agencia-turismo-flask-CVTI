@@ -1,11 +1,7 @@
 from app import app
 from flask import redirect, request, render_template, flash, session, jsonify
-import json, os, app.ofer as of, requests, math, uuid
+import json, os, uuid
 import datetime
-
-import sib_api_v3_sdk
-from sib_api_v3_sdk.rest import ApiException
-from pprint import pprint
 
 app.secret_key = 'CVTI'
 
@@ -13,8 +9,12 @@ app.secret_key = 'CVTI'
 def loading():
     return render_template('loading.html')
 
+
 @app.route("/home")
 def home():
+    with open('app/info.json','r',encoding='utf-8') as of:
+        ofertas = json.load(of)
+
     hoteis = []
     precos = []
     locais = []
@@ -22,14 +22,14 @@ def home():
     tempos = []
     moedas = []
 
-    for i in range(3):
-        local = of.ofertas[i]['local']
-        estado = of.ofertas[i]['estado']
-        tempo = of.ofertas[i]['tempo']
-        moeda = of.ofertas[i]['moeda']
+    for i in range(5):
+        local = ofertas[i]['local']
+        estado = ofertas[i]['estado']
+        tempo = ofertas[i]['tempo']
+        moeda = ofertas[i]['moeda']
         for k in range(3):
-            hotel = of.ofertas[i]['hoteis'][k]['nome']
-            preco = of.ofertas[i]['hoteis'][k]['preco']
+            hotel = ofertas[i]['hoteis'][k]['nome']
+            preco = ofertas[i]['hoteis'][k]['preco']
             locais.append(local)
             hoteis.append(hotel)
             precos.append(preco)
@@ -37,52 +37,7 @@ def home():
             tempos.append(tempo)
             moedas.append(moeda)
 
-
-    public_ip_link = 'https://api.ipify.org/'
-    public_ip = requests.get(public_ip_link).text
-    # IP Público do usuário 
-
-    geolocation_link = f'http://ip-api.com/json/{public_ip}'
-    geolocation_api = requests.get(geolocation_link).json()
-    # Geolocalização do usuário
-
-    user_lat = geolocation_api['lat'] 
-    user_lon = geolocation_api['lon']
-    user_city = geolocation_api['city']
-    # Latitude e longitude do usuário
-
-    copacabana_lat = -22.970722
-    copacabana_lon = -43.182365
-
-    paraty_lat = -23.2167
-    paraty_lon = -44.7179
-
-    petropolis_lat = -22.5046
-    petropolis_lon = -43.1823
-
-    def haversine(lat1, lon1, lat2, lon2):
-        lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
-        # Graus para radianos
-
-        dlat = lat2 - lat1
-        dlon = lon2 - lon1
-        #Diferença entre lat. e lon.
-
-        a = math.sin(dlat/2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon/2)**2
-        c = 2 * math.atan2(math.sqrt(a),math.sqrt(1-a))
-        # Fórmula de haversine
-
-        R = 6371.0
-        # Raio de Terra em km
-
-        distancia = R*c
-        return distancia
-
-    copacabana_distance = math.floor(haversine(copacabana_lat,copacabana_lon,user_lat,user_lon))
-    paraty_distance = math.floor(haversine(paraty_lat,paraty_lon,user_lat,user_lon))
-    petropolis_distance = math.floor(haversine(petropolis_lat,petropolis_lon,user_lat,user_lon))
-
-    return render_template('home.html', locais=locais, hoteis=hoteis, precos=precos, estados=estados, tempos=tempos, moedas=moedas, petropolis_distance=petropolis_distance, copacabana_distance=copacabana_distance, paraty_distance=paraty_distance)
+    return render_template('home.html', locais=locais, hoteis=hoteis, precos=precos, estados=estados, tempos=tempos, moedas=moedas)
 
 @app.route("/viagens")
 def viagens():
@@ -178,12 +133,21 @@ def logout():
 def pesquisar():
     return """<head><title>Aterrissar.com</title></head>oi"""
 
-@app.route('/explore/rj/copacabana/hilton')
-def hilton():
-    cep = 22011010
-    link = f'https://brasilapi.com.br/api/cep/v1/{cep}'
-    info = requests.get(link).json()
-    return render_template('hilton.html', info=info)
+with open('app/data.json', 'r', encoding='utf-8') as f:
+    hotels_data = json.load(f)
+
+
+@app.route('/viagens/<hot>')
+def explore(hot):
+    if hot in hotels_data:
+        hotel_info = hotels_data[hot]
+        lat = hotel_info['lat']
+        lon = hotel_info['lon']
+        rua = hotel_info['rua']
+        preco = hotel_info['preco']
+        des = hotel_info['info']
+        nome_hosp = hotel_info['nome']
+    return render_template('explore.html', lon=lon, lat=lat, hot=hot, nome_hosp=nome_hosp, rua=rua, preco=preco, des=des)
 
 def carregar_avaliacoes():
     with open('app/avaliacao.json', 'r', encoding='utf-8') as file:
@@ -200,7 +164,7 @@ def notas(hospedagem):
 
     nome = session.get('nome', 'Usuário')  # 'Usuário' é o valor padrão caso 'nome' não esteja presente
     sobrenome = session.get('sobrenome', '')
-
+    
     return render_template('notas.html', nome = nome, sobrenome = sobrenome,avaliacoes=avaliacoes_filtradas, hospedagem = hospedagem)
 
 @app.route('/enviarnota', methods=['POST'])
@@ -208,7 +172,10 @@ def enviarnota():
     data_agora = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
     user_comentario = request.form.get('comentario')
     hospedagem = request.form.get('hospedagem')
-    nova_avaliacao = dict(hospedagem = hospedagem,nome=session['nome'],sobrenome=session['sobrenome'],comentario=user_comentario, data_envio=data_agora)
+    if not user_comentario:
+        return redirect(f'/avaliacao/{hospedagem}')
+    rating = request.form.get('rating')
+    nova_avaliacao = dict(hospedagem = hospedagem,nome=session['nome'],sobrenome=session['sobrenome'],comentario=user_comentario, data_envio=data_agora, rating=rating)
 
     try:
         if os.path.exists('app/avaliacao.json'):
@@ -224,12 +191,42 @@ def enviarnota():
     except:
         return redirect(f'/avaliacao/{hospedagem}')
 
-@app.route('/reservas')
+
+paises = [
+            "Afeganistão", "África do Sul", "Alemanha", "Arábia Saudita", "Argentina", 
+            "Austrália", "Bélgica", "Bolívia", "Brasil", "Canadá", "Chile", "China", 
+            "Colômbia", "Coreia do Norte", "Coreia do Sul", "Cuba", "Dinamarca", "Egito", 
+            "Emirados Árabes Unidos", "Espanha", "Estados Unidos", "Filipinas", "Finlândia", 
+            "França", "Grécia", "Holanda", "Índia", "Indonésia", "Irlanda", "Israel", 
+            "Itália", "Japão", "México", "Noruega", "Nova Zelândia", "Panamá", "Paraguai", 
+            "Peru", "Polônia", "Portugal", "Reino Unido", "Rússia", "Suécia", "Suíça", 
+            "Tailândia", "Turquia", "Ucrânia", "Uruguai", "Venezuela", "Vietnã"
+        ]
+
+@app.route('/reserva', methods = ['POST'])
 def reserva():
-    return 'wip'
+    if 'email' not in session:
+        return redirect('/login')
+    
+    hospedagem = request.form.get('hospedagem')
+    preco = request.form.get('preco')
+    endereco = request.form.get('endereco')
 
+    if hospedagem == None:
+        return redirect('home.html')
+    
+    pais_selecionado = "Brasil"
 
+    return render_template('reserva.html', hospedagem=hospedagem, preco=preco, endereco=endereco, paises = paises, pais_selecionado = pais_selecionado)
 
+@app.route('/concluido', methods = ['POST'])
+def concluir():
+    if 'email' not in session:
+        return redirect('/login')
+    
+    hospedagem = request.form.get('hospedagem')
+    preco = request.form.get('preco')
+    endereco = request.form.get('endereco')
 
-
-
+    return render_template('concluido.html')
+    

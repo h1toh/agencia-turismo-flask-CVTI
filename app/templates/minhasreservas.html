@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block base %}
+    
+{% if reservas %}
+<h2>Confirmação de Reserva</h2>
+    {% for reserva in reservas %}
+        <p><strong>Hospedagem:</strong> {{ reservas['hospedagem'] }}</p>
+        <p><strong>Endereço:</strong> {{ reservas['endereco'] }}</p>
+        <p><strong>Preço:</strong> R$ {{ reservas['preco'] }}</p>
+    {%endfor%}
+{% else %}
+<p>Não há reservas correspondentes para o e-mail informado.</p>
+{% endif %}
+    
+{% endblock %}
