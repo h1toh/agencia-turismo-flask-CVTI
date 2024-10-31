@@ -9,33 +9,33 @@ app.secret_key = 'CVTI'
 def loading():
     return render_template('loading.html')
 
+with open('app/info.json','r',encoding='utf-8') as of:
+        ofertas = json.load(of)
+
+hoteis = []
+precos = []
+locais = []
+estados = []
+tempos = []
+moedas = []
+
+for i in range(5):
+    local = ofertas[i]['local']
+    estado = ofertas[i]['estado']
+    tempo = ofertas[i]['tempo']
+    moeda = ofertas[i]['moeda']
+    for k in range(3):
+        hotel = ofertas[i]['hoteis'][k]['nome']
+        preco = ofertas[i]['hoteis'][k]['preco']
+        locais.append(local)
+        hoteis.append(hotel)
+        precos.append(preco)
+        estados.append(estado)
+        tempos.append(tempo)
+        moedas.append(moeda)
 
 @app.route("/home")
 def home():
-    with open('app/info.json','r',encoding='utf-8') as of:
-        ofertas = json.load(of)
-
-    hoteis = []
-    precos = []
-    locais = []
-    estados = []
-    tempos = []
-    moedas = []
-
-    for i in range(5):
-        local = ofertas[i]['local']
-        estado = ofertas[i]['estado']
-        tempo = ofertas[i]['tempo']
-        moeda = ofertas[i]['moeda']
-        for k in range(3):
-            hotel = ofertas[i]['hoteis'][k]['nome']
-            preco = ofertas[i]['hoteis'][k]['preco']
-            locais.append(local)
-            hoteis.append(hotel)
-            precos.append(preco)
-            estados.append(estado)
-            tempos.append(tempo)
-            moedas.append(moeda)
 
     return render_template('home.html', locais=locais, hoteis=hoteis, precos=precos, estados=estados, tempos=tempos, moedas=moedas)
 
@@ -44,10 +44,6 @@ def viagens():
     if 'email' not in session:
         return redirect('/login')
     return render_template('viagens.html')
-
-@app.route("/favoritos")
-def favoritos():
-    return render_template('favoritos.html')
 
 @app.route("/conectar")
 def conectar():
@@ -229,4 +225,25 @@ def concluir():
     endereco = request.form.get('endereco')
 
     return render_template('concluido.html')
+
+
     
+@app.route('/explore/nova_iguacu')
+def nova():
+    return render_template('nova.html', locais=locais, hoteis=hoteis, precos=precos, estados=estados, tempos=tempos, moedas=moedas)
+
+@app.route('/explore/petropolis')
+def petro():
+    return render_template('petro.html', locais=locais, hoteis=hoteis, precos=precos, estados=estados, tempos=tempos, moedas=moedas)
+
+@app.route('/explore/copacabana')
+def copa():
+    return render_template('copa.html', locais=locais, hoteis=hoteis, precos=precos, estados=estados, tempos=tempos, moedas=moedas)
+
+@app.route('/explore/paraty')
+def para():
+    return render_template('paraty.html', locais=locais, hoteis=hoteis, precos=precos, estados=estados, tempos=tempos, moedas=moedas)
+
+@app.route('/explore/arraial_do_cabo')
+def cabo():
+    return render_template('cabo.html', locais=locais, hoteis=hoteis, precos=precos, estados=estados, tempos=tempos, moedas=moedas)

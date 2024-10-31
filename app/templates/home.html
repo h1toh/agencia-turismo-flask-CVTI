@@ -62,7 +62,7 @@
         .pr {
             width: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             align-items: center;
             gap: 100px;
             padding: 10px 0;
@@ -72,14 +72,6 @@
             text-decoration: none;
         }
 
-        #heart {
-            display: inline-block;
-            aspect-ratio: 1;
-            border-image: radial-gradient(rgba(255, 0, 0, 0.137) 69%, #0000 70%) 84.5%/50%;
-            clip-path: polygon(-41% 0, 50% 91%, 141% 0);
-            width: 25px;
-            cursor: pointer;
-        }
 
         .pesquisa input {
             border-radius: 10px;
@@ -122,9 +114,16 @@
             height: 290px;
             width: 571px;
             border-radius: 6px;
+            transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        .imgh1:hover, .imagesss:hover{
+            -webkit-box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
+            -moz-box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
+            box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
         }
         .imgh1{
             max-height: 200px;
+            transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
         }
         .images:hover {
             transform: scale(1.1);
@@ -182,19 +181,11 @@
 <body>
     <main id="ofertas">
 
-        <main class="pesquisa">
-
-            <form action="pesquisar" method="get">
-                <input type="search" placeholder="Para onde você vai?" name="pesquisa" id="pesquisa">
-                <button class="btn" type="submit">Buscar</button>
-            </form>
-
-        </main>
         <br>
 
         <div class="h1s1">
             <h1>Hospedagens mais populares</h1>
-            <a href="/viagens"><p style="color: rgb(223, 77, 24);">Ver tudo</p></a>
+            <a id="myLink" href="/viagens"><p style="color: rgb(223, 77, 24);">Ver mais</p></a>
         </div>
         <br>
         <main class="cd">
@@ -203,14 +194,14 @@
                 <div>
                     <a class="ancora" href="/viagens/turquesa">
                         <div class="kkk">
-                            <img class="images" src="{{url_for('static',filename='images/hilton.png')}}" alt="turquesa">
+                            <img class="images" src="{{url_for('static',filename='images/turquesa.png')}}" alt="turquesa">
                         </div>
                         <h1 class="ht">{{ hoteis[11] }}</h1>
                         <p class="lcl">{{ locais[9] }}, {{ estados[2] }}</p>
                     </a>
                 </div>
                 <div class="pr">
-                    <div title="Favoritar" id="heart"></div>
+                    <div></div>
                     <h1 class="preço">{{ moedas[2] }} {{ precos[11] }}</h1>
                 </div>
             </div>
@@ -226,7 +217,7 @@
                     </a>
                 </div>
                 <div class="pr">
-                    <div title="Favoritar" id="heart""></div>
+                    <div></div>
                     <h1 class="preço">{{ moedas[2] }} {{ precos[2] }}</h1>
                 </div>
             </div>
@@ -243,7 +234,7 @@
                 </div>
             </a>
                 <div class="pr">
-                    <div title="Favoritar" id="heart"></div>
+                    <div></div>
                     <h1 class="preço">{{ moedas[3] }} {{ precos[8] }}</h1>
                 </div>
             </div>
@@ -259,7 +250,7 @@
                     </div>
                 </a>
                     <div class="pr">
-                        <div title="Favoritar" id="heart"></div>
+                        <div></div>
                         <h1 class="preço">{{ moedas[2] }} {{ precos[4] }}</h1>
                     </div>
                 </div>
@@ -274,7 +265,7 @@
             <p>Destinos incríveis mais próximos a você</p>
         </div>
         <br>
-        <main class="juntos">
+        <main id="targetSection" class="juntos">
 
             <main class="perfeitos">
                 <a href="/explore/petropolis">
@@ -317,4 +308,11 @@
 
     </main>
 </body>
+
+<script>
+    document.getElementById("myLink").addEventListener("click", function(event) {
+      event.preventDefault(); // Evita o comportamento padrão do link
+      document.getElementById("targetSection").scrollIntoView({ behavior: "smooth" });
+    });
+</script>
 {% endblock %}

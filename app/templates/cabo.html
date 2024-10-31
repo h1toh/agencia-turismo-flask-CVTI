@@ -1,0 +1,276 @@
+{% extends 'base.html' %}
+{% block base %}]
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    #info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .imagi{
+        margin-top: -201px;
+        width: 100%;
+    }
+    .divimg{
+        margin-top: -21px;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+    }
+    .parag{
+        width: 50%;
+    }
+    .titulo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .lugar{
+        font-size: 56px;
+    }
+    #ofertas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            padding: 50px 0;
+        }
+
+        .images {
+            height: 170px;
+            border-radius: 6px;
+            transition: 0.2s ease-in-out;
+        }
+
+        .card {
+            -webkit-box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
+            -moz-box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
+            box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
+            border-radius: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 300px;
+            width: 270px;
+            overflow: hidden;
+        }
+
+        .cd {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background-color: white;
+            gap: 20px;
+        }
+
+        .ht {
+            padding-left: 10px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .lcl {
+            padding-left: 10px;
+            font-size: 13px;
+            color: gray;
+        }
+
+        .preço {
+            font-size: 20px;
+            color: rgb(223, 77, 24);
+        }
+
+        .pr {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 100px;
+            padding: 10px 0;
+        }
+
+        .ancora {
+            text-decoration: none;
+        }
+
+
+        .pesquisa input {
+            border-radius: 10px;
+            border: gray solid 1px;
+            height: 50px;
+            width: 400px;
+            padding: 0 10px;
+            font-size: 17px;
+        }
+
+        .btn {
+            background-color: rgb(28, 69, 255);
+            color: white;
+            border-radius: 25px;
+            height: 50px;
+            width: 125px;
+            border: none;
+            font-size: 17px;
+        }
+
+        .h1s {
+            width: 1140px;
+            display: flex;
+            justify-content: left;
+            flex-direction: column;
+        }
+        .h1s1 {
+            width: 1140px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .imagess {
+            height: 250px;
+            border-radius: 6px;
+            transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        .imagesss {
+            height: 290px;
+            width: 571px;
+            border-radius: 6px;
+        }
+        .imgh1{
+            max-height: 200px;
+        }
+        .images:hover {
+            transform: scale(1.1);
+        }
+
+        .textu {
+            position: relative;
+            top: -230px;
+            left: 10px;
+            color: white;
+            font-size: 23px;
+            text-shadow: 0px 1px 4px #23430C;
+        }
+        .textuu {
+            position: relative;
+            top: -270px;
+            left: 10px;
+            color: white;
+            font-size: 23px;
+            text-shadow: 0px 1px 4px #23430C;
+        }
+        .dist{
+            position: relative;
+            top: -200px;
+            left: 10px;
+            color: white;
+            font-size: 14px;
+            text-shadow: 0px 2px 4px #23430C;
+        }
+        .kkk{
+            overflow: hidden;
+            border-radius: 6px;
+            height: 170px;
+        }
+
+        .perfeitos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .juntos{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .vazio{
+            height: 55px;
+        }
+</style>
+<main id="info">
+    <div class="divimg">
+        <img class="imagi" src="{{url_for('static',filename='images/arraial.jpg')}}" alt="">
+    </div>
+    <br>
+    <div class="titulo">
+        <h1 class="lugar">Conheça Arraial do Cabo</h1>
+        <h1 class="lugar">O Paraíso Azul do Rio de Janeiro</h1>
+    </div>
+    <br>
+    <div class="parag">
+        <p class="info">Bem-vindo a Arraial do Cabo, um verdadeiro santuário natural de águas cristalinas e paisagens de tirar o fôlego! Com praias de areia branca e uma biodiversidade marinha impressionante, Arraial do Cabo é o destino ideal para os amantes do mar e da natureza.</p>
+        <br>
+        <p class="info">Arraial oferece uma variedade de opções de hospedagem, desde pousadas charmosas a acomodações de luxo à beira-mar, garantindo conforto para todos os perfis de viajantes. Venha explorar esse paraíso, conhecido como o "Caribe brasileiro", e descubra por que Arraial do Cabo é um dos destinos de praia mais encantadores do país!</p>
+    </div>
+</main>
+
+<br>
+<main class="cd">
+    <div>
+        <h2>Sugestões de hospedagens</h2>
+    </div>
+</main>
+<br>
+<main class="cd">
+    <div class="card">
+        <div>
+            <a class="ancora" href="/viagens/turquesa">
+                <div class="kkk">
+                    <img class="images" src="{{url_for('static',filename='images/turquesa.png')}}" alt="turquesa">
+                </div>
+                <h1 class="ht">{{ hoteis[11] }}</h1>
+                <p class="lcl">{{ locais[11] }}, {{ estados[2] }}</p>
+            </a>
+        </div>
+        <div class="pr">
+            <div></div>
+            <h1 class="preço">{{ moedas[2] }} {{ precos[11] }}</h1>
+        </div>
+    </div>
+
+    <div class="card">
+        <div>
+            <a class="ancora" href="/viagens/varandas">
+                <div class="kkk">
+                    <img class="images" src="{{url_for('static',filename='images/varandas.png')}}" alt="varandas">
+                </div>
+                <h1 class="ht">{{ hoteis[10] }}</h1>
+                <p class="lcl">{{ locais[10] }}, {{ estados[2] }}</p>
+            </a>
+        </div>
+        <div class="pr">
+            <div></div>
+
+            <h1 class="preço">{{ moedas[2] }} {{ precos[10] }}</h1>
+        </div>
+    </div>
+
+    <div class="card">
+        <div>
+            <a class="ancora" href="/viagens/praiana">
+                <div class="kkk">
+                    <img class="images" src="{{url_for('static',filename='images/praiana.png')}}" alt="praiana">
+                </div>
+                <h1 class="ht">{{ hoteis[9] }}</h1>
+                <p class="lcl">{{ locais[9] }}, {{ estados[2] }}</p>
+            </a>
+        </div>
+        <div class="pr">
+            <div></div>
+            <h1 class="preço">{{ moedas[2] }} {{ precos[9] }}</h1>
+        </div>
+    </div>
+</main>
+<div class="vazio"></div>
+{% endblock %}

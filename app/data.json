@@ -94,5 +94,29 @@
         "rua": "Rua Doutor Agostinho Goulão nº 2098, Petrópolis, CEP 25730-050, Brasil",
         "preco": "1.270,00",
         "info": "Localizado em Petrópolis, o Casa Marambaia Hotel oferece um restaurante. A propriedade dispõe de academia e está localizada a 9 km da Catedral de São Pedro de Alcântara. Todos os quartos incluem varanda com vista para o lago. Os quartos do hotel estão equipados com área de estar, TV de tela plana com canais a cabo e banheiro privativo com secador de cabelo e chuveiro. Todos os quartos incluem guarda-roupa. Um café da manhã à la carte é servido todas as manhãs no Casa Marambaia Hotel. A acomodação pode fornecer informações na recepção para ajudar você a se locomover pela área. A Estação Rodoviária de Petrópolis fica a 13 km do Casa Marambaia Hotel. Já o Aeroporto Internacional do Rio de Janeiro - Galeão fica a 43 km da propriedade."
+    },
+    "montblanc": {
+        "nome": "Mont Blanc Apart Hotel Nova Iguaçu",
+        "lat": -22.501380,
+        "lon": -43.19870,
+        "rua": "Av. Dr. Mario Guimaraes, 533, Nova Iguaçu, CEP 26255-230, Brasil",
+        "preco": "1.934,00",
+        "info": "O Mont Blanc oferece apartamentos modernos com cozinha e Wi-Fi gratuito no centro de Iguaçu, a 22 km do Aeroporto do Galeão. As comodidades incluem uma piscina ao ar livre, sauna e estacionamento gratuito. Os apartamentos espaçosos em plano aberto do Mont Blanc Apart Hotel Nova Iguaçu apresentam interiores brancos bem-iluminados e móveis decorativos em tons neutros. Todos incluem cozinhas totalmente equipadas, lounges e ar-condicionado. As varandas privativas oferecem vista panorâmica para a cidade. No Mont Blanc Bistrô, você poderá saborear pratos da cozinha internacional, bem como aproveitar a adega de vinho com uma extensa lista de vinhos sul-americanos. Você também pode apreciar o buffet de café-da-manhã com frutas, frios e sucos naturais. O Mont Blanc Apart Hotel está a apenas 6 quarteirões da Estação Central de Trem de Nova Iguaçu, e a 700 m do Shopping Center Iguaçu Top. Você pode fazer consultas turísticas adicionais no balcão da recepção 24 horas do hotel."
+    },
+    "loft": {
+        "nome": "Confortável loft, ar, Wi-Fi, TV, 400m UNIG",
+        "lat": -22.501380,
+        "lon": -43.198270,
+        "rua": "Av. Abílio Augusto Távora, 2573 - c1, Nova Iguaçu, CEP 26265-090, Brasil",
+        "preco": "1.125,00",
+        "info": "Localizado em Nova Iguaçu, a 38 km do Estádio do Maracanã e a 40 km do Aquário Marinho do Rio AquaRio, o Confortável loft, ar, Wi-Fi, TV, 400m UNIG oferece jardim e ar-condicionado. A propriedade dispõe de vista do jardim e fica a 41 km do Museu do Amanhã e a 42 km da Escadaria Selarón. O estacionamento privativo está disponível por um custo extra. Este apartamento de 1 quarto dispõe de WiFi gratuito, TV de tela plana e cozinha com forno e micro-ondas. Para sua comodidade, toalhas e roupa de cama são fornecidas. A acomodação é para não fumantes. O apartamento fica a 42 km do Teatro Municipal do Rio de Janeiro e a 43 km do Museu de Arte Moderna. O aeroporto mais próximo é o Aeroporto Internacional do Galeão/Rio de Janeiro, a 35 km do Confortável loft, ar, Wi-Fi, TV, 400m UNIG."
+    },
+    "mercure": {
+        "nome": "Mercure Rio de Janeiro Nova Iguaçu",
+        "lat": -22.501380,
+        "lon": -43.198270,
+        "rua": "Av. Doutor Mario Guimarães, 520, Nova Iguaçu, CEP 26255-230, Brasil",
+        "preco": "1.310,00",
+        "info": "O Mercure RJ Nova Iguaçu dispõe de sauna e academia em Nova Iguaçu, Rio de Janeiro, a 800 metros da estação de trem. A acomodação conta com restaurante. Você pode usufruir do Wi-Fi gratuito em todos os ambientes e do estacionamento privativo no local. Os quartos possuem ar-condicionado e TV. Alguns têm área de estar, ideal para relaxar. O banheiro privativo tem chuveiro. O café da manhã delicioso com frutas da estação e itens regionais é servido diariamente no Mercure RJ Nova Iguaçu. O hotel também serve opções gastronômicas e vinho no local. O Mercure RJ Nova Iguaçu fica a 1 km do Nova Iguaçu Shopping e a 2 km da Universidade de Iguaçu (UNIG). O Aeroporto Internacional do Rio de Janeiro - Galeão é o mais próximo, localizado a 22 km."
     }
 }

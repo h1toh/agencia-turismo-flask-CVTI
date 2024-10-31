@@ -9,19 +9,25 @@
         href="https://media.licdn.com/dms/image/v2/C4E0BAQFiqxB0tsTy1g/company-logo_200_200/company-logo_200_200/0/1662660090313?e=2147483647&v=beta&t=gFK_cLcLullIqcvVf2jSEPV68Mx2P5ZwxkVd_kFWhIM"
         type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <style>
+        #logo{
+            height: 100px;
+        }
+    </style>
 </head>
 
 <body>
     
     <header class="cabecalho">
-        <a style="color: white;" href="/home">Aterrissar</a>
+        <a href="/home">
+            <img id="logo" src="{{url_for('static',filename='images/logo.png')}}" alt="Aterrissar">
+        </a>
         <nav class="links">
-            <a href="/viagens">Viagens</a> 
-            <a href="/favoritos">Favoritos</a>
             {% if session['nome'] %}
             <div class="ftt">
                 <a href="/profile"><img class="pfp" title="Meu Perfil" src="{{url_for('static',filename='images/defpfp.jpg')}}" alt=""></a>
             </div>
+            
             {% else %}
                 <a href="/conectar">Conectar</a>
             {% endif %}

@@ -32,7 +32,7 @@
         "local": "Paraty",
         "hoteis": [
             {
-                "nome": "Casas do Pátio Pousada & Bar",
+                "nome": "Pátio Pousada & Bar",
                 "preco": "770,00",
                 "estrelas": 3
             },
@@ -57,7 +57,7 @@
         "local": "Petrópolis",
         "hoteis": [
             {
-                "nome": "HMG Morada & Chalet - Centro histórico",
+                "nome": "HMG Morada & Chalet",
                 "preco": "160,00",
                 "estrelas": 3
             },
@@ -107,18 +107,18 @@
         "local": "Nova Iguaçu",
         "hoteis": [
             {
-                "nome": "Pousada Vila Praiana",
-                "preco": "1.069,00",
+                "nome": "Confortável loft",
+                "preco": "1.125,00",
                 "estrelas": 3
             },
             {
-                "nome": "Varandas do Arraial - Hostel",
-                "preco": "2.646,00",
+                "nome": "Mercure Nova Iguaçu",
+                "preco": "1.310,00",
                 "estrelas": 4
             },
             {
-                "nome": "Pousada Vista Turquesa",
-                "preco": "5.690,00",
+                "nome": "Mont Blanc Apart Hotel",
+                "preco": "1.934,00",
                 "estrelas": 5
             }
         ],
