@@ -12,7 +12,3 @@ htmlcov/
 dist/
 build/
 *.egg-info/
-
-.flaskenv
-
-conta.json
