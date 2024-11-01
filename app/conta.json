@@ -30,5 +30,21 @@
 		"celular": "21987025814",
 		"senha": "1234",
 		"user_uuid": "0534cf09-e396-471d-8560-c29e5ce09016"
+	},
+	{
+		"nome": "",
+		"sobrenome": "",
+		"email": "",
+		"celular": "",
+		"senha": "",
+		"user_uuid": "d6bf5f78-3b26-44bb-96fb-8fe1a258e6a0"
+	},
+	{
+		"nome": "fdfdfd",
+		"sobrenome": "dfdfdf",
+		"email": "fdfdfd@gamil.com",
+		"celular": "43434343",
+		"senha": "1234",
+		"user_uuid": "4603a922-0490-4354-8046-cc0807b77b9a"
 	}
 ]

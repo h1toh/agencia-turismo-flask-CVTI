@@ -31,6 +31,7 @@
             height: 300px;
             width: 270px;
             overflow: hidden;
+            
         }
 
         .cd {
@@ -175,6 +176,65 @@
         .vazio{
             height: 55px;
         }
+
+        @media (max-width: 768px) {
+            .cd {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                background-color: white;
+                gap: 20px;
+            }
+            .perfeitos {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                flex-direction: column;
+            }
+            .h1s1 {
+                width: 1140px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .h1s {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .imagess {
+                height: 250px;
+                border-radius: 6px;
+                transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+            .imagesss {
+                height: 250px;
+                width: 100%;
+                
+                border-radius: 6px;
+                transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+
+            .textuu {
+                position: relative;
+                top: -230px;
+                left: 10px;
+                color: white;
+                font-size: 23px;
+                text-shadow: 0px 1px 4px #23430C;
+            }
+            body{
+                overflow-x: hidden;
+            }
+        }
     </style>
 </head>
 
@@ -187,6 +247,7 @@
             <h1>Hospedagens mais populares</h1>
             <a id="myLink" href="/viagens"><p style="color: rgb(223, 77, 24);">Ver mais</p></a>
         </div>
+        <br>
         <br>
         <main class="cd">
 

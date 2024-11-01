@@ -1,202 +1,247 @@
 {% extends 'base.html' %}
 {% block base %}]
 <style>
-    *{
+    * {
         padding: 0;
         margin: 0;
     }
-    #info{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    .imagi{
-        margin-top: -201px;
-        width: 100%;
-    }
-    .divimg{
-        margin-top: -21px;
-        width: 100%;
-        height: 400px;
-        overflow: hidden;
-    }
-    .parag{
-        width: 50%;
-    }
-    .titulo{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    .lugar{
-        font-size: 56px;
-    }
-    #ofertas {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            width: 100%;
-            padding: 50px 0;
-        }
 
-        .images {
-            height: 170px;
-            border-radius: 6px;
-            transition: 0.2s ease-in-out;
-        }
-
-        .card {
-            -webkit-box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
-            -moz-box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
-            box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
-            border-radius: 10%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 300px;
-            width: 270px;
-            overflow: hidden;
-        }
-
+    @media (max-width: 768px) {
         .cd {
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             width: 100%;
             background-color: white;
             gap: 20px;
         }
 
-        .ht {
-            padding-left: 10px;
-            font-size: 18px;
-            color: black;
+        .lugar {
+            font-size: 25px;
         }
 
-        .lcl {
-            padding-left: 10px;
-            font-size: 13px;
-            color: gray;
-        }
-
-        .preço {
-            font-size: 20px;
-            color: rgb(223, 77, 24);
-        }
-
-        .pr {
-            width: 100%;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            gap: 100px;
-            padding: 10px 0;
-        }
-
-        .ancora {
-            text-decoration: none;
-        }
+        .imagi {
 
 
-        .pesquisa input {
-            border-radius: 10px;
-            border: gray solid 1px;
-            height: 50px;
-            width: 400px;
-            padding: 0 10px;
-            font-size: 17px;
+            height: 500px;
         }
 
-        .btn {
-            background-color: rgb(28, 69, 255);
-            color: white;
-            border-radius: 25px;
-            height: 50px;
-            width: 125px;
-            border: none;
-            font-size: 17px;
-        }
+        .divimg {
 
-        .h1s {
-            width: 1140px;
-            display: flex;
-            justify-content: left;
-            flex-direction: column;
-        }
-        .h1s1 {
-            width: 1140px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
 
-        .imagess {
-            height: 250px;
-            border-radius: 6px;
-            transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-        }
-        .imagesss {
-            height: 290px;
-            width: 571px;
-            border-radius: 6px;
-        }
-        .imgh1{
-            max-height: 200px;
-        }
-        .images:hover {
-            transform: scale(1.1);
-        }
+            height: 100px;
 
-        .textu {
-            position: relative;
-            top: -230px;
-            left: 10px;
-            color: white;
-            font-size: 23px;
-            text-shadow: 0px 1px 4px #23430C;
-        }
-        .textuu {
-            position: relative;
-            top: -270px;
-            left: 10px;
-            color: white;
-            font-size: 23px;
-            text-shadow: 0px 1px 4px #23430C;
-        }
-        .dist{
-            position: relative;
-            top: -200px;
-            left: 10px;
-            color: white;
-            font-size: 14px;
-            text-shadow: 0px 2px 4px #23430C;
-        }
-        .kkk{
             overflow: hidden;
-            border-radius: 6px;
-            height: 170px;
         }
+    }
 
-        .perfeitos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-        }
+    #info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 
-        .juntos{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .vazio{
-            height: 55px;
-        }
+    .imagi {
+        margin-top: -201px;
+        width: 100%;
+    }
+
+    .divimg {
+        margin-top: -21px;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+    }
+
+    .parag {
+        width: 50%;
+    }
+
+    .titulo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .lugar {
+        font-size: 56px;
+    }
+
+    #ofertas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        padding: 50px 0;
+    }
+
+    .images {
+        height: 170px;
+        border-radius: 6px;
+        transition: 0.2s ease-in-out;
+    }
+
+    .card {
+        -webkit-box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
+        -moz-box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
+        box-shadow: 0px 0px 34px -15px rgba(0, 0, 0, 0.61);
+        border-radius: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 300px;
+        width: 270px;
+        overflow: hidden;
+    }
+
+    .cd {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: white;
+        gap: 20px;
+    }
+
+    .ht {
+        padding-left: 10px;
+        font-size: 18px;
+        color: black;
+    }
+
+    .lcl {
+        padding-left: 10px;
+        font-size: 13px;
+        color: gray;
+    }
+
+    .preço {
+        font-size: 20px;
+        color: rgb(223, 77, 24);
+    }
+
+    .pr {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 100px;
+        padding: 10px 0;
+    }
+
+    .ancora {
+        text-decoration: none;
+    }
+
+
+    .pesquisa input {
+        border-radius: 10px;
+        border: gray solid 1px;
+        height: 50px;
+        width: 400px;
+        padding: 0 10px;
+        font-size: 17px;
+    }
+
+    .btn {
+        background-color: rgb(28, 69, 255);
+        color: white;
+        border-radius: 25px;
+        height: 50px;
+        width: 125px;
+        border: none;
+        font-size: 17px;
+    }
+
+    .h1s {
+        width: 1140px;
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+    }
+
+    .h1s1 {
+        width: 1140px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .imagess {
+        height: 250px;
+        border-radius: 6px;
+        transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .imagesss {
+        height: 290px;
+        width: 571px;
+        border-radius: 6px;
+    }
+
+    .imgh1 {
+        max-height: 200px;
+    }
+
+    .images:hover {
+        transform: scale(1.1);
+    }
+
+    .textu {
+        position: relative;
+        top: -230px;
+        left: 10px;
+        color: white;
+        font-size: 23px;
+        text-shadow: 0px 1px 4px #23430C;
+    }
+
+    .textuu {
+        position: relative;
+        top: -270px;
+        left: 10px;
+        color: white;
+        font-size: 23px;
+        text-shadow: 0px 1px 4px #23430C;
+    }
+
+    .dist {
+        position: relative;
+        top: -200px;
+        left: 10px;
+        color: white;
+        font-size: 14px;
+        text-shadow: 0px 2px 4px #23430C;
+    }
+
+    .kkk {
+        overflow: hidden;
+        border-radius: 6px;
+        height: 170px;
+    }
+
+    .perfeitos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .juntos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .vazio {
+        height: 55px;
+    }
 </style>
 <main id="info">
     <div class="divimg">
@@ -209,9 +254,15 @@
     </div>
     <br>
     <div class="parag">
-        <p class="info">Localizada na Serra dos Órgãos, Petrópolis é uma charmosa cidade histórica que encanta visitantes com sua rica herança cultural e belíssimas paisagens. Conhecida como a "Cidade Imperial", foi a residência de verão da família imperial brasileira no século XIX. Entre suas atrações, destacam-se o Museu Imperial, que abriga um acervo fascinante da época, e a Catedral de São Pedro de Alcântara, um exemplo notável da arquitetura gótica.</p>
+        <p class="info">Localizada na Serra dos Órgãos, Petrópolis é uma charmosa cidade histórica que encanta
+            visitantes com sua rica herança cultural e belíssimas paisagens. Conhecida como a "Cidade Imperial", foi a
+            residência de verão da família imperial brasileira no século XIX. Entre suas atrações, destacam-se o Museu
+            Imperial, que abriga um acervo fascinante da época, e a Catedral de São Pedro de Alcântara, um exemplo
+            notável da arquitetura gótica.</p>
         <br>
-        <p class="info">Com um clima ameno e a apenas uma hora do Rio de Janeiro, Petrópolis é o destino perfeito para quem busca cultura, natureza e tranquilidade. Venha descobrir tudo o que essa encantadora cidade tem a oferecer!</p>
+        <p class="info">Com um clima ameno e a apenas uma hora do Rio de Janeiro, Petrópolis é o destino perfeito para
+            quem busca cultura, natureza e tranquilidade. Venha descobrir tudo o que essa encantadora cidade tem a
+            oferecer!</p>
     </div>
 </main>
 <br>

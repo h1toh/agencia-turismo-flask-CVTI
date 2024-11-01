@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
 {% block base %}
 <style>
-    .haha{
+    .haha {
         display: flex;
         flex-direction: column;
         border-radius: 8px;
         border: 1px solid rgb(231, 231, 231);
         padding: 5px;
     }
-    .haha h1{
+
+    .haha h1 {
         font-size: 23px;
     }
-    .haha h2{
+
+    .haha h2 {
         font-size: 17px;
     }
+
     input {
         padding: 5px;
         height: 30px;
@@ -21,20 +24,25 @@
         border-radius: 8px;
         border: 1px solid rgb(199, 199, 199);
     }
-    .nm{
+
+    .nm {
         display: flex;
         align-items: center;
         gap: 5px;
     }
-    main{
+
+    main {
         display: flex;
         justify-content: center;
     }
-    p{
+
+    p {
         color: gray;
         font-size: 14px;
     }
-    .mostraemail{
+
+    .mostraemail {
+        width: 90%;
         display: flex;
         align-items: center;
         gap: 9px;
@@ -42,46 +50,83 @@
         border: 1px solid rgb(231, 231, 231);
         padding: 5px;
     }
-    .mostraemail h1{
+
+    .mostraemail h1 {
         font-size: 20px;
     }
-    .din{
+
+    .din {
         display: flex;
         justify-content: space-between;
     }
-    .compra{
-        display: flex;    
+
+    .compra {
+        display: flex;
         flex-direction: column;
         border-radius: 8px;
         border: 1px solid rgb(231, 231, 231);
         padding: 5px;
     }
-    .final{
+
+    .compra p {
+        font-size: 100%;
+    }
+
+    .final {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .vazio{
+
+    .vazio {
         height: 7vh;
     }
-    .select{
+
+    .select {
         height: 40px;
         width: 300px;
         border-radius: 8px;
         border: 1px solid rgb(199, 199, 199);
     }
-    .cliq{
+
+    .cliq {
         cursor: pointer;
         background-color: rgb(28, 69, 255);
-        color: white; height: 60px; width: 100%; font-size: 16px
+        color: white;
+        height: 60px;
+        width: 100%;
+        font-size: 16px
     }
-    .cliqe{
-         height: 60px; width: 100%;
+
+    .cliqe {
+        height: 60px;
+        width: 100%;
     }
-    .dates{
+
+    .dates {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 100%;
+        }
+
+        .nm {
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .dates {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
     }
 </style>
 
@@ -92,7 +137,7 @@
         <input type="hidden" name="endereco" value="{{endereco}}" id="endereco">
         <input type="hidden" name="preco" value="{{preco}}" id="preco">
         <div>
-    
+
             <div class="mostraemail">
                 <img class="pfp" title="Meu Perfil" src="{{url_for('static',filename='images/defpfp.jpg')}}" alt="">
                 <div>
@@ -100,9 +145,9 @@
                     <p>{{session['email']}}</p>
                 </div>
             </div>
-    
+
             <br>
-        
+
             <div class="haha">
                 <h1>Confirme seus dados</h1>
                 <br>
@@ -126,7 +171,7 @@
                     <h2>País/Região</h2>
                     <select class="select" name="pais" id="pais" required>
                         {% for pais in paises %}
-                        <option value="pais" {% if pais == pais_selecionado %}selected{% endif %}>{{pais}}</option>
+                        <option value="pais" {% if pais==pais_selecionado %}selected{% endif %}>{{pais}}</option>
                         {%endfor%}
                     </select>
                 </div>
@@ -136,9 +181,9 @@
                     <input required type="tel" value="{{session['celular']}}" name="telefone" id="telefone">
                 </div>
             </div>
-    
+
             <br>
-    
+
             <div class="compra">
                 <h3>{{hospedagem}}</h3>
                 <p>{{endereco}}</p>
@@ -153,7 +198,7 @@
                         <h5>Saida</h5>
                         <input required value="2024-11-25" type="date" name="datesaida" id="datesaida">
                     </div>
-                    
+
                 </div>
                 <br>
                 <div class="din">

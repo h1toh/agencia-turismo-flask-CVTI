@@ -143,7 +143,8 @@ def explore(hot):
         preco = hotel_info['preco']
         des = hotel_info['info']
         nome_hosp = hotel_info['nome']
-    return render_template('explore.html', lon=lon, lat=lat, hot=hot, nome_hosp=nome_hosp, rua=rua, preco=preco, des=des)
+        imagem = hotel_info['imagens']
+    return render_template('explore.html', lon=lon, lat=lat, hot=hot, nome_hosp=nome_hosp, rua=rua, preco=preco, des=des, imagem=imagem)
 
 def carregar_avaliacoes():
     with open('app/avaliacao.json', 'r', encoding='utf-8') as file:
